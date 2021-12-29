@@ -3,9 +3,45 @@
 
 #include <iostream>
 
+//https://www.quora.com/Are-there-any-ways-to-simulate-or-implement-interfaces-in-C++-other-than-using-pure-virtual-methods
+struct Process1 {
+    void DoIt(int i) {
+        std::cout << "Process 1 = " << i << std::endl;
+    }
+};
+
+struct Process2 {
+    void DoIt(int i) {
+        std::cout << "Process 2 = " << i << std::endl;
+    }
+};
+
+// Sample of building a non inherited class with different
+// functionality that you would normally do with inheritance. 
+// No overhead. Compile time check on existence of method
+template<typename ProcessType>
+class Processor {
+public:
+    void Process(int i) {
+        p.DoIt(i);
+    }
+
+private:
+    ProcessType p;
+};
+
+
+
 int main()
 {
     std::cout << "Hello World!\n";
+
+    Processor<Process1> p1;
+    Processor<Process2> p2;
+    p1.Process(2334);
+    p2.Process(1009);
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
