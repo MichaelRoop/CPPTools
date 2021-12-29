@@ -24,15 +24,21 @@
     <ClInclude Include="RTFifoQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CPPContainersDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DummyContainersForImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CPPContainers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RTFifoQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DummyContainersForImport.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
