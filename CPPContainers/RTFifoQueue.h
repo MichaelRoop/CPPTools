@@ -2,14 +2,14 @@
 
 namespace CppRTContainers {
 
-	/// <summary>Maintain a circular buffer for fifo queue
-	/// 
-	/// </summary>
+	/// <summary>Maintain a circular buffer for fifo queue in real time systems/// </summary>
 	/// <typeparam name="T"></typeparam>
 	template <class T>
 	class RTFifoQueue {
 	public:
-		
+
+		/// <summary>Constructor that allocates memory once</summary>
+		/// <param name="capacity">The max capacity of the queue</param>
 		RTFifoQueue(int capacity){
 			this->Init(capacity);
 		}

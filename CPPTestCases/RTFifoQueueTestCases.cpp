@@ -4,6 +4,16 @@
 using namespace CppRTContainers;
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+
+class TstClass {
+public:
+	int A = 0;
+	TstClass() {}
+	TstClass(int a) {
+		this->A = a;
+	}
+};
+
 namespace CPPRTTestCases {
 
 	TEST_CLASS(RTFifoQueueTestCases) {
@@ -78,6 +88,34 @@ public:
 	}
 
 
+	TEST_METHOD(T03_01_PushPopClassPtr) {
+		RTFifoQueue<TstClass*> q(3);
+		for (int i = 1; i < 4; i++) {
+			q.Push(new TstClass(i));
+		}
+		Assert::AreEqual(3, q.Count());
+
+		TstClass* ptr = q.Pop();
+		Assert::IsNotNull(ptr);
+		Assert::AreEqual(1, ptr->A);
+		Assert::AreEqual(2, q.Count());
+		delete ptr;
+
+		ptr = q.Pop();
+		Assert::IsNotNull(ptr);
+		Assert::AreEqual(2, ptr->A);
+		Assert::AreEqual(1, q.Count());
+		delete ptr;
+
+		ptr = q.Pop();
+		Assert::IsNotNull(ptr);
+		Assert::AreEqual(3, ptr->A);
+		Assert::AreEqual(0, q.Count());
+		delete ptr;
+
+		ptr = q.Pop();
+		Assert::IsNull(ptr);
+	}
 
 
 
