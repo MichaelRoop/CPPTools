@@ -14,6 +14,23 @@ public:
 	}
 };
 
+class TstClass2 {
+public:
+	TstClass2() {}
+	TstClass2(int value) {
+		this->a = value;
+	}
+	TstClass2(const TstClass2& obj) {
+		this->a = obj.a;
+	}
+	int GetA() { return this->a; }
+private:
+	int a = 0;
+
+};
+
+
+
 namespace CPPRTTestCases {
 
 	TEST_CLASS(RTFifoQueueTestCases) {
@@ -115,6 +132,151 @@ public:
 
 		ptr = q.Pop();
 		Assert::IsNull(ptr);
+	}
+
+
+	TEST_METHOD(T04_01_PushPopClassInstance) {
+		RTFifoQueue<TstClass2> q(3);
+		for (int i = 1; i < 4; i++) {
+			q.Push(TstClass2(i));
+		}
+		Assert::AreEqual(3, q.Count());
+
+		Assert::IsFalse(q.IsEmpty(), L"Should not indicate empty");
+		TstClass2 inst = q.Pop();
+		Assert::AreEqual(1, inst.GetA());
+		Assert::AreEqual(2, q.Count());
+
+		Assert::IsFalse(q.IsEmpty());
+		inst = q.Pop();
+		Assert::AreEqual(2, inst.GetA());
+		Assert::AreEqual(1, q.Count());
+
+		Assert::IsFalse(q.IsEmpty());
+		inst = q.Pop();
+		Assert::AreEqual(3, inst.GetA());
+		Assert::AreEqual(0, q.Count());
+
+		// The returning instance on empty is 0 (null)
+		// which default constructs an object
+		Assert::IsTrue(q.IsEmpty());
+		inst = q.Pop();
+		Assert::AreEqual(0, q.Count());
+
+		//Assert::IsNull(inst);
+	}
+
+
+
+
+	TEST_METHOD(T05_01_PopIfPresentInstance) {
+		RTFifoQueue<TstClass2> q(3);
+		for (int i = 1; i < 4; i++) {
+			q.Push(TstClass2(i));
+		}
+		Assert::AreEqual(3, q.Count());
+
+		TstClass2 cpy;
+		Assert::IsTrue(q.PopIfPresent(cpy), L"Should be present");
+		Assert::AreEqual(1, cpy.GetA());
+		Assert::AreEqual(2, q.Count());
+
+		Assert::IsTrue(q.PopIfPresent(cpy), L"Should be present");
+		Assert::AreEqual(2, cpy.GetA());
+		Assert::AreEqual(1, q.Count());
+
+		Assert::IsTrue(q.PopIfPresent(cpy), L"Should be present");
+		Assert::AreEqual(3, cpy.GetA());
+		Assert::AreEqual(0, q.Count());
+
+		Assert::IsFalse(q.PopIfPresent(cpy), L"Should NOT be present");
+	}
+
+
+	TEST_METHOD(T05_02_PopIfPresentPtr) {
+		RTFifoQueue<TstClass2*> q(3);
+		for (int i = 1; i < 4; i++) {
+			q.Push(new TstClass2(i));
+		}
+		Assert::AreEqual(3, q.Count());
+
+		TstClass2* ptr;
+		Assert::IsTrue(q.PopIfPresent(ptr), L"Should be present");
+		Assert::IsNotNull(ptr);
+		Assert::AreEqual(1, ptr->GetA());
+		Assert::AreEqual(2, q.Count());
+		delete ptr;
+		ptr = 0;
+
+		Assert::IsTrue(q.PopIfPresent(ptr), L"Should be present");
+		Assert::IsNotNull(ptr);
+		Assert::AreEqual(2, ptr->GetA());
+		Assert::AreEqual(1, q.Count());
+		delete ptr;
+		ptr = 0;
+
+		Assert::IsTrue(q.PopIfPresent(ptr), L"Should be present");
+		Assert::IsNotNull(ptr);
+		Assert::AreEqual(3, ptr->GetA());
+		Assert::AreEqual(0, q.Count());
+		delete ptr;
+		ptr = 0;
+
+		Assert::IsFalse(q.PopIfPresent(ptr), L"Should NOT be present");
+	}
+
+
+	TEST_METHOD(T06_01_PeekInstance) {
+		RTFifoQueue<TstClass2> q(2);
+		for (int i = 1; i < 3; i++) {
+			q.Push(TstClass2(i));
+		}
+		Assert::AreEqual(2, q.Count());
+
+		TstClass2 cpy = q.Peek();
+		Assert::AreEqual(1, cpy.GetA());
+		Assert::AreEqual(2, q.Count());
+		cpy = q.Pop();
+		Assert::AreEqual(1, cpy.GetA());
+		Assert::AreEqual(1, q.Count());
+
+		cpy = q.Peek();
+		Assert::AreEqual(2, cpy.GetA());
+		Assert::AreEqual(1, q.Count());
+		cpy = q.Pop();
+		Assert::AreEqual(2, cpy.GetA());
+		Assert::AreEqual(0, q.Count());
+
+		// empty one should return default constructed object
+		cpy = q.Peek();
+		Assert::AreEqual(0, cpy.GetA());
+	}
+
+
+	TEST_METHOD(T07_01_PeekIfPresentInstance) {
+		RTFifoQueue<TstClass2> q(2);
+		for (int i = 1; i < 3; i++) {
+			q.Push(TstClass2(i));
+		}
+		Assert::AreEqual(2, q.Count());
+
+		TstClass2 cpy;
+		Assert::IsTrue(q.PeekIfPresent(cpy), L"Should be present");
+		Assert::AreEqual(1, cpy.GetA());
+		Assert::AreEqual(2, q.Count());
+		Assert::IsTrue(q.PopIfPresent(cpy), L"Should be present");
+		Assert::AreEqual(1, cpy.GetA());
+		Assert::AreEqual(1, q.Count());
+
+		Assert::IsTrue(q.PeekIfPresent(cpy), L"Should be present");
+		Assert::AreEqual(2, cpy.GetA());
+		Assert::AreEqual(1, q.Count());
+		Assert::IsTrue(q.PopIfPresent(cpy), L"Should be present");
+		Assert::AreEqual(2, cpy.GetA());
+		Assert::AreEqual(0, q.Count());
+
+		Assert::IsFalse(q.PeekIfPresent(cpy), L"Should NOT be present");
+
 	}
 
 

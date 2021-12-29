@@ -40,6 +40,28 @@ namespace CppRTContainers {
 		}
 
 
+		/// <summary>Have a look at the next one to be popped</summary>
+		/// <returns></returns>
+		T Peek() {
+			// You can only peel if you have one
+			if (this->count > 0) {
+				return this->ptr[this->nextOut];
+			}
+			return 0;
+		}
+
+
+		bool PeekIfPresent(T& cpy) {
+			// You can only peel if you have one
+			if (this->count > 0) {
+				//return this->ptr[this->nextOut];
+				cpy = this->Peek();
+				return true;
+			}
+			return false;
+		}
+
+
 		T Pop() {
 			// You can only pop if you have one
 			if (this->count > 0) {
@@ -59,15 +81,25 @@ namespace CppRTContainers {
 		}
 
 
+		bool PopIfPresent(T& cpy) {
+			if (!this->IsEmpty()) {
+				cpy = this->Pop();
+				return true;
+			}
+			return false;
+		}
+
+
 		void Clear() {
 			this->nextIn = 0;
 			this->nextOut = -1;
 			this->count = 0;
 		}
 
-
+		/// <summary>Returns empty state of queue</summary>
+		/// <returns>true if empty, otherwise false</returns>
 		bool IsEmpty() {
-			return this->count > 0;
+			return this->count == 0;
 		}
 
 
