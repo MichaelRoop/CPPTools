@@ -94,7 +94,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN;CPP_USE_WIDE_STR</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -113,7 +113,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN;CPP_USE_WIDE_STR</PreprocessorDefinitions>
       <UseFullPaths>true</UseFullPaths>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -161,6 +161,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CppExceptionTests.cpp" />
+    <ClCompile Include="CppStateTests.cpp" />
+    <ClCompile Include="CppStringTests.cpp" />
     <ClCompile Include="CPPTestCases.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -176,6 +179,9 @@
   <ItemGroup>
     <ProjectReference Include="..\CPPContainers\CPPContainers.vcxproj">
       <Project>{35fad8f1-0807-4d35-80a8-7aa0a5485ec7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\CPPVariousUtils\CPPVariousUtils.vcxproj">
+      <Project>{975afafc-bdb1-41f1-a758-177b3f1bd5cb}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
