@@ -4,7 +4,10 @@
 #include "..\CPPVariousUtils\Cpp_macroDefines.h"
 #include "CppStateMachineDefines.h"
 #include "CppStateTransitionInfo.h"
-#include "CppTransitionType.h"
+//#include "CppTransitionType.h"
+
+
+
 
 namespace CppStateMachine {
 
@@ -12,7 +15,7 @@ namespace CppStateMachine {
 
 	private:
 		typedef std::vector<CppStateTransitionInfo<T>>	ST_TRANSITION_VEC;	///< Transition vector.
-		typedef typename MR_TRANSITION_VEC::iterator	ST_TRANSITION_IT;	///< Transition vector iterator.
+		typedef typename ST_TRANSITION_VEC::iterator	ST_TRANSITION_IT;	///< Transition vector iterator.
 
 	public:
 	
@@ -37,7 +40,7 @@ namespace CppStateMachine {
 		///
 		///	@param	id		The event id.
 		/// @param	state	The state to transition to on event id.
-		void RegisterEventTransition(unsigned int id, CppStateMachine::TRANSITION_TYPE type, CppState* state) {
+		void RegisterEventTransition(unsigned int id, TRANSITION_TYPE type, CppState* state) {
 			this->AssertNotRegistered(m_eTransitions, id, FL);
 			m_eTransitions.push_back(CppStateTransitionInfo(id, type, state));
 		}
@@ -48,7 +51,7 @@ namespace CppStateMachine {
 		///
 		///	@param	id		The event id.
 		/// @param	state	The state to transition to on the result id.
-		void RegisterResultTransition(unsigned int id, CppStateMachine::TRANSITION_TYPE type, CppState* state) {
+		void RegisterResultTransition(unsigned int id, TRANSITION_TYPE type, CppState* state) {
 			this->AssertNotRegistered(m_rTransitions, id, FL);
 			m_rTransitions.push_back(CppStateTransitionInfo(id, type, state));
 		}
@@ -59,7 +62,7 @@ namespace CppStateMachine {
 		/// @param	Tevent	The event to push at the state.
 		///
 		/// @return NULL if no state change required, otherwise the new state.
-		virtual Cpp_transitionInfo<T> PulseState(const T& _event) {
+		virtual CppStateTransitionInfo<T> PulseState(const T& _event) {
 			// Check for pre-emptive, then results.
 			CppStateTransitionInfo<T> info = this->GetEventTransition(_event.m_id);
 			if (info.m_type == NO_INFO) {
@@ -73,7 +76,7 @@ namespace CppStateMachine {
 		}
 
 
-		virtual unsigned int OnState(const T& event) = 0;
+		virtual unsigned int OnState(const T& event) { return 0; };
 
 
 		virtual void OnExit() {
@@ -104,8 +107,8 @@ namespace CppStateMachine {
 	private:
 
 		unsigned int		m_id;			///< State ID.
-		MR_TRANSITION_VEC	m_eTransitions;	///< possible transitions before any state code execution.
-		MR_TRANSITION_VEC	m_rTransitions;	///< possible transitions from internal code execution.
+		ST_TRANSITION_VEC	m_eTransitions;	///< possible transitions before any state code execution.
+		ST_TRANSITION_VEC	m_rTransitions;	///< possible transitions from internal code execution.
 
 
 		/// @brief	Register a pre-emptive state change to happen on an event ID. The internal 
@@ -113,7 +116,7 @@ namespace CppStateMachine {
 		///
 		///	@param	id		The event id.
 		/// @param	state	The state to transition to on event id.
-		void AssertNotRegistered(MR_TRANSITION_VEC& vec, int id, const char* file, int line) const {
+		void AssertNotRegistered(ST_TRANSITION_VEC& vec, int id, const char* file, int line) const {
 			// TODO Implement			
 			CppUtils::Cpp_exception::assertCondition(
 				std::find_if(vec.begin(), vec.end(), findTransition<T>(id)) == vec.end(),
@@ -129,8 +132,8 @@ namespace CppStateMachine {
 		/// @param	id	The id of the event or result.
 		///
 		/// @return	The next state to transition to or NULL if no matching id.
-		CppStateTransitionInfo<T> GetTransition(MR_TRANSITION_VEC& vec, int id) {
-			MR_TRANSITION_IT it = std::find_if(vec.begin(), vec.end(), findTransition<T>(id));
+		CppStateTransitionInfo<T> GetTransition(ST_TRANSITION_VEC& vec, int id) {
+			ST_TRANSITION_IT it = std::find_if(vec.begin(), vec.end(), FindStateTransition<T>(id));
 			if (it != vec.end()) {
 				return *it;
 			}

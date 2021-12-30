@@ -1,14 +1,23 @@
-#include "pch.h"
-#include "CppUnitTest.h"
-//#include "../CppStateMachine/CppState.h"
+#include "TestIncludes.h"
+
+using namespace CppStateMachine;
 
 namespace CPPRTTestCases {
+
+	class TickObj {
+	public:
+		int m_id;
+		TickObj() {
+			this->m_id = 0;
+		}
+	};
 
 
 	TEST_CLASS(CppStateTests) {
 
 		TEST_METHOD(T01_01_Scratch) {
-			//CppState s(1);
+
+			CppState<TickObj> s(1);
 
 
 		}

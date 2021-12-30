@@ -13,7 +13,17 @@
 namespace CppStateMachine {
 
 #include "CppTransitionType.h"
-#include <algorithm>
+//#include <algorithm>
+
+
+	typedef enum {
+		NO_INFO,
+		//	NO_CHANGE,
+		STATE_CHANGE,
+		SUBSTATE_EXIT
+
+	} TRANSITION_TYPE;
+
 
 	/// <summary>Forward declaration of functor</summary>
 	/// <typeparam name="T"></typeparam>

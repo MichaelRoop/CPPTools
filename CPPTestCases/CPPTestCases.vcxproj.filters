@@ -18,9 +18,6 @@
     <ClCompile Include="CPPTestCases.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RTFifoQueueTestCases.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -35,7 +32,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
+    <ClInclude Include="TestIncludes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

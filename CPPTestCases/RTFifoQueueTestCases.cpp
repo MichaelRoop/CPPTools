@@ -1,6 +1,5 @@
-#include "pch.h"
-#include "CppUnitTest.h"
-#include "../CPPContainers/RTFifoQueue.h"
+#include "TestIncludes.h"
+
 using namespace CppRTContainers;
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -165,8 +164,6 @@ public:
 
 		//Assert::IsNull(inst);
 	}
-
-
 
 
 	TEST_METHOD(T05_01_PopIfPresentInstance) {
