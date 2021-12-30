@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "RTFifoQueue.h"
 
 namespace CppRTContainers {
