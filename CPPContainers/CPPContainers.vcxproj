@@ -157,7 +157,6 @@
   <ItemGroup>
     <ClInclude Include="CPPContainersDefines.h" />
     <ClInclude Include="DummyContainersForImport.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="RTFifoQueue.h" />
   </ItemGroup>
   <ItemGroup>

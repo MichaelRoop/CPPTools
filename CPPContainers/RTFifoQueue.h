@@ -4,8 +4,7 @@ namespace CppRTContainers {
 
 	/// <summary>Maintain a circular buffer for fifo queue in real time systems/// </summary>
 	/// <typeparam name="T"></typeparam>
-	template <class T>
-	class RTFifoQueue {
+	template <class T> class RTFifoQueue {
 	public:
 
 		/// <summary>Constructor that allocates memory once</summary>
