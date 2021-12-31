@@ -10,8 +10,6 @@
 /// Copyright 2010 Michael Roop
 ///--------------------------------------------------------------------------------------
 
-
-#include "pch.h"
 #include "Cpp_pointerException.h"
 
 

@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CppStaticTimer.h" />
     <ClInclude Include="CppUtilsDefines.h" />
     <ClInclude Include="Cpp_char.h" />
     <ClInclude Include="Cpp_exceptions.h" />
@@ -162,19 +163,13 @@
     <ClInclude Include="Cpp_string.h" />
     <ClInclude Include="Cpp_toStream.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CppStaticTimer.cpp" />
     <ClCompile Include="Cpp_exceptions.cpp" />
     <ClCompile Include="Cpp_pointerException.cpp" />
     <ClCompile Include="Cpp_sstream.cpp" />
     <ClCompile Include="Cpp_string.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
