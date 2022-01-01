@@ -1,8 +1,5 @@
+#include "TestIncludes.h"
 
-#include "CppUnitTest.h"
-#include "../CPPVariousUtils/CppSharedPtr.h"
-#include <iostream>
-//#include "../CPPVariousUtils/Cpp_sstream.h"
 using namespace CppUtils;
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -17,45 +14,34 @@ namespace CPPRTTestCases {
 			int value = 1;
 		};
 
-//public:
-		// also redirect of OS stream
-		//https://stackoverflow.com/questions/51491235/c-visual-studio-how-to-output-to-test-output-window			
-		std::streambuf* backup;
-		std::stringstream ss;
 		int x;
 
-		// Only run once and can only do statics
+		// Only run once per file and and can only do statics
 		TEST_CLASS_INITIALIZE(ClassInitialize) {
-			Logger::WriteMessage("-Fixture Setup");
+			//LOGMSG("*-Fixture Setup")
 		}
 
+		// Only run once per file and and can only do statics
 		TEST_CLASS_CLEANUP(ClassCleanup) {
-			Logger::WriteMessage("-Fixture Teardown");
+			//LOGMSG("*-Fixture Teardown")
 		}
 
 		// A new class is created for each TEST_METHOD so this 
 		// is where you initialise class instance variables
 		TEST_METHOD_INITIALIZE(TestInit) {
-			// REDIRECT STD STREAM
-			backup = std::cout.rdbuf();
-			std::cout.rdbuf(ss.rdbuf());
 			x = 2;
-			Logger::WriteMessage("--Test Setup");
+			//LOGMSG("*--Test Setup")
 		}
 
 		TEST_METHOD_CLEANUP(TestCleanup) {
-			Logger::WriteMessage("--Test Teardown");
-			// ASSIGN COUT BACK TO STDOUT
-			std::cout.rdbuf(backup);
+			//LOGMSG("*--Test Teardown")
 		}
 
 
 		TEST_METHOD(T01_01_DefaultConstructor) {
-			Logger::WriteMessage("******* My message via logger *******");
-			int i = 345110011;
-			std::cout << "Blippy poo:" << i << std::endl;
-			Logger::WriteMessage(ss.str().c_str());
-
+			// Sample log output
+			int i = 1000001;
+			LOGMSG("Blippy poo:" << i)
 			CppSharedPtr<TstClass> sp1;
 			Assert::AreEqual((unsigned)0, sp1.Count(), L"sp1 count default constructor");
 		}
