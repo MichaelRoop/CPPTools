@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 #include "../CPPVariousUtils/CppSharedPtr.h"
 #include <iostream>
+//#include "../CPPVariousUtils/Cpp_sstream.h"
 using namespace CppUtils;
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -16,9 +17,32 @@ namespace CPPRTTestCases {
 			int value = 1;
 		};
 
+		TEST_CLASS_INITIALIZE(ClassInitialize) {
+			Logger::WriteMessage("-Fixture Setup");
+		}
+
+		TEST_CLASS_CLEANUP(ClassCleanup) {
+			Logger::WriteMessage("-Fixture Teardown");
+		}
+
+		TEST_METHOD_INITIALIZE(TestInit) {
+			Logger::WriteMessage("--Test Setup");
+		}
+
+		TEST_METHOD_CLEANUP(TestCleanup) {
+			Logger::WriteMessage("--Test Teardown");
+		}
 
 
 		TEST_METHOD(T01_01_DefaultConstructor) {
+			Logger::WriteMessage("******* My message via logger *******");
+			int i = 345;
+
+			// The cout or cerr does not show up on the test output window
+			std::stringstream ss;
+			ss << "Blippy poo:" << i << std::endl;
+			Logger::WriteMessage(ss.str().c_str());
+
 			CppSharedPtr<TstClass> sp1;
 			Assert::AreEqual((unsigned)0, sp1.Count(), L"sp1 count default constructor");
 		}
