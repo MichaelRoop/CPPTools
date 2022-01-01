@@ -17,6 +17,14 @@ namespace CPPRTTestCases {
 			int value = 1;
 		};
 
+//public:
+		// also redirect of OS stream
+		//https://stackoverflow.com/questions/51491235/c-visual-studio-how-to-output-to-test-output-window			
+		std::streambuf* backup;
+		std::stringstream ss;
+		int x;
+
+		// Only run once and can only do statics
 		TEST_CLASS_INITIALIZE(ClassInitialize) {
 			Logger::WriteMessage("-Fixture Setup");
 		}
@@ -25,22 +33,27 @@ namespace CPPRTTestCases {
 			Logger::WriteMessage("-Fixture Teardown");
 		}
 
+		// A new class is created for each TEST_METHOD so this 
+		// is where you initialise class instance variables
 		TEST_METHOD_INITIALIZE(TestInit) {
+			// REDIRECT STD STREAM
+			backup = std::cout.rdbuf();
+			std::cout.rdbuf(ss.rdbuf());
+			x = 2;
 			Logger::WriteMessage("--Test Setup");
 		}
 
 		TEST_METHOD_CLEANUP(TestCleanup) {
 			Logger::WriteMessage("--Test Teardown");
+			// ASSIGN COUT BACK TO STDOUT
+			std::cout.rdbuf(backup);
 		}
 
 
 		TEST_METHOD(T01_01_DefaultConstructor) {
 			Logger::WriteMessage("******* My message via logger *******");
-			int i = 345;
-
-			// The cout or cerr does not show up on the test output window
-			std::stringstream ss;
-			ss << "Blippy poo:" << i << std::endl;
+			int i = 345110011;
+			std::cout << "Blippy poo:" << i << std::endl;
 			Logger::WriteMessage(ss.str().c_str());
 
 			CppSharedPtr<TstClass> sp1;
