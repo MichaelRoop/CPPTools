@@ -22,7 +22,7 @@ namespace CppUtils {
 
 
 	/// @brief	Destructor.
-	Cpp_pointerException::~Cpp_pointerException() throw() {
+	Cpp_pointerException::~Cpp_pointerException() {
 	}
 
 

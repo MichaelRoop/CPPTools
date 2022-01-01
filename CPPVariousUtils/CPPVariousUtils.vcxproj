@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CppSharedPtr.h" />
+    <ClInclude Include="CppSingleton.h" />
     <ClInclude Include="CppStaticTimer.h" />
     <ClInclude Include="CppUtilsDefines.h" />
     <ClInclude Include="Cpp_char.h" />
@@ -165,6 +167,7 @@
     <ClInclude Include="framework.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CppSingleton.cpp" />
     <ClCompile Include="CppStaticTimer.cpp" />
     <ClCompile Include="Cpp_exceptions.cpp" />
     <ClCompile Include="Cpp_pointerException.cpp" />

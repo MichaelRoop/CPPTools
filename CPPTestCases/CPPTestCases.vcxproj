@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CppExceptionTests.cpp" />
+    <ClCompile Include="CppSharedPtrTests.cpp" />
     <ClCompile Include="CppStateTests.cpp" />
     <ClCompile Include="CppStringTests.cpp" />
     <ClCompile Include="CPPTestCases.cpp" />

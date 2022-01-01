@@ -35,8 +35,7 @@ namespace CppUtils {
 	///
 	///--------------------------------------------------------------------------------------
 	
-	class CPPUTILS_API Cpp_pointerException : public Cpp_exception
-	{
+	class CPPUTILS_API Cpp_pointerException : public Cpp_exception {
 	public:
 
 		/// @brief	Constructor.
@@ -47,7 +46,7 @@ namespace CppUtils {
 
 
 		/// @brief	Destructor.
-		virtual ~Cpp_pointerException() throw();
+		virtual ~Cpp_pointerException();
 
 
 		/// @brief	Wrapper to clean up checking for exception throw on bad pointers.
