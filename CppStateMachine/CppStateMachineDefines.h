@@ -1,7 +1,7 @@
 #pragma once
 
 // Cross platform DLL export import defines
-#if defined(WIN)
+#if defined(_WIN32) || defined(_WIN64)
 	#if defined(CPPSTATEMACHINE_EXPORTS)
 		#pragma message("Exporting CppStateMachine DLL Classes")
 		#define CPP_SM_API __declspec(dllexport)

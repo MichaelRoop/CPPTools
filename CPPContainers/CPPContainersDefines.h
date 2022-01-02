@@ -1,7 +1,7 @@
 #pragma once
 
 // Cross platform DLL export import defines
-#if defined(WIN)
+#if defined(_WIN32) || defined(_WIN64)
 	#if defined(CPPCONTAINERS_EXPORTS)
 		#pragma message("Exporting CppContainers DLL Classes")
 		#define CPPCONTAINERS_API __declspec( dllexport )

@@ -5,7 +5,7 @@
 #include <vector>
 
 // Cross platform DLL export import defines
-#if defined(WIN)
+#if defined(_WIN32) || defined(_WIN64)
 	#if defined(CPPVARIOUSUTILS_EXPORTS)
 		#pragma message("Exporting CppVariousUtils DLL Classes")
 		#define CPPUTILS_API __declspec(dllexport)
