@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPVariousUtils", "CPPVario
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppStateMachine", "CppStateMachine\CppStateMachine.vcxproj", "{3912EFFA-FA09-4E8B-8C8C-350838B72A4B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppIniFile", "CppIniFile\CppIniFile.vcxproj", "{6A14770E-2A79-412D-8A55-1CE31D2A2040}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{3912EFFA-FA09-4E8B-8C8C-350838B72A4B}.Release|x64.Build.0 = Release|x64
 		{3912EFFA-FA09-4E8B-8C8C-350838B72A4B}.Release|x86.ActiveCfg = Release|Win32
 		{3912EFFA-FA09-4E8B-8C8C-350838B72A4B}.Release|x86.Build.0 = Release|Win32
+		{6A14770E-2A79-412D-8A55-1CE31D2A2040}.Debug|x64.ActiveCfg = Debug|x64
+		{6A14770E-2A79-412D-8A55-1CE31D2A2040}.Debug|x64.Build.0 = Debug|x64
+		{6A14770E-2A79-412D-8A55-1CE31D2A2040}.Debug|x86.ActiveCfg = Debug|Win32
+		{6A14770E-2A79-412D-8A55-1CE31D2A2040}.Debug|x86.Build.0 = Debug|Win32
+		{6A14770E-2A79-412D-8A55-1CE31D2A2040}.Release|x64.ActiveCfg = Release|x64
+		{6A14770E-2A79-412D-8A55-1CE31D2A2040}.Release|x64.Build.0 = Release|x64
+		{6A14770E-2A79-412D-8A55-1CE31D2A2040}.Release|x86.ActiveCfg = Release|Win32
+		{6A14770E-2A79-412D-8A55-1CE31D2A2040}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
