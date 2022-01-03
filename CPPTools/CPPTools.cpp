@@ -31,15 +31,27 @@ private:
 };
 
 
+//#define LOG_LEVEL_INFO
+#define LOG_LEVEL_ERR
+#define LOG_MSGS
+#include "..\CppLogger\CppLoggerDefines.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
 
-    Processor<Process1> p1;
-    Processor<Process2> p2;
-    p1.Process(2334);
-    p2.Process(1009);
+    LOG_INFO("This is Info:" << 234)
+    LOG_DBG("This is Debug:" << 345)
+    LOG_WARN("This is Warning:" << 2001)
+    LOG_ERR("This is Error:" << 5002)
+
+
+
+
+    //Processor<Process1> p1;
+    //Processor<Process2> p2;
+    //p1.Process(2334);
+    //p2.Process(1009);
 
 
 }
