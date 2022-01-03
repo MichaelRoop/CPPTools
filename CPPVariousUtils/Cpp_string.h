@@ -60,12 +60,18 @@ namespace CppUtils {
 	CPPUTILS_API std::string WideToNarrowString(const std::wstring& str);
 
 
+	CPPUTILS_API std::string WideToNarrowString(const std::string& str);
+
+
+
 	/// @brief	Function to convert a narrow string to wide.
 	///
 	/// @param	str	The string to convert.
 	///
 	/// @return	A copy of the string converted to wide char.
 	CPPUTILS_API std::wstring NarrowToWideString(const std::string& str);
+
+	CPPUTILS_API std::wstring NarrowToWideString(const std::wstring& str);
 
 
 	/// @brief	Function to tokenize a string by calling it repeatedly.

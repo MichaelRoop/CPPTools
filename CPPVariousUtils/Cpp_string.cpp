@@ -94,8 +94,7 @@ namespace CppUtils {
 
 	// But simple wide to narrow conversion.  No Unicode considered.  Will only 
 	// work with normal range of ANSII characters in wide format.
-	std::string WideToNarrowString(const std::wstring& str)
-	{
+	std::string WideToNarrowString(const std::wstring& str) {
 		// Create matching buffers and add null terminator char to end.
 		std::vector<wchar_t> wideChars(str.length() + 1, L'\0');
 		std::vector<char> narrowChars(str.length() + 1, '\0');
@@ -103,6 +102,11 @@ namespace CppUtils {
 
 		std::for_each(wideChars.begin(), wideChars.end(), AnsiiWideCharToNarrow(narrowChars));
 		return std::string(&narrowChars[0]);
+	}
+
+
+	std::string WideToNarrowString(const std::string& str) {
+		return str;
 	}
 
 
@@ -116,6 +120,11 @@ namespace CppUtils {
 
 		std::for_each(narrowChars.begin(), narrowChars.end(), NarrowCharToWide(wideChars));
 		return std::wstring(&wideChars[0]);
+	}
+
+
+	std::wstring NarrowToWideString(const std::wstring& str) {
+		return str;
 	}
 
 
