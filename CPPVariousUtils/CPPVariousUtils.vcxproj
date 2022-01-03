@@ -157,6 +157,7 @@
     <ClInclude Include="CppUtilsDefines.h" />
     <ClInclude Include="Cpp_char.h" />
     <ClInclude Include="Cpp_exceptions.h" />
+    <ClInclude Include="Cpp_fstream.h" />
     <ClInclude Include="Cpp_functors.h" />
     <ClInclude Include="Cpp_iostream.h" />
     <ClInclude Include="Cpp_macroDefines.h" />
