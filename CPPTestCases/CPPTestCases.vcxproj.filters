@@ -33,6 +33,9 @@
     <ClCompile Include="CppSharedPtrTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CppStringTokenizeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestIncludes.h">
