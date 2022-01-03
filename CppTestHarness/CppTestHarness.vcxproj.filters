@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{e99aaa50-6b4b-4aa0-a2b3-55487ba8b5a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\include">
+      <UniqueIdentifier>{5068ef21-a308-4f2c-b542-8ae173a8885c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\source">
+      <UniqueIdentifier>{f14c079f-e5cc-4833-8aec-1b6abe499fc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{a9b468b5-f346-4db9-aa93-a73cae50d73a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dlls">
+      <UniqueIdentifier>{8a4d9c57-523d-4b99-83ec-7bc4770709a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dlls\include">
+      <UniqueIdentifier>{0962a7db-4c28-4cd3-b45e-adaf758105a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dlls\source">
+      <UniqueIdentifier>{cb9ffa0a-8c46-43c6-9394-5be626f2f89b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exceptions">
+      <UniqueIdentifier>{954984f1-f962-4ca2-be52-710e9c79b7c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exceptions\include">
+      <UniqueIdentifier>{cbfc988f-6916-4043-bde1-f6b7d35d082d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exceptions\source">
+      <UniqueIdentifier>{45193fbe-f2a8-4cd0-ad33-77a84c34e2bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Factories">
+      <UniqueIdentifier>{df1014af-cbe6-4810-8f30-dd1fb1fee2b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Factories\include">
+      <UniqueIdentifier>{f47fc280-76fb-45a3-8fbe-2a43a5810644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Factories\source">
+      <UniqueIdentifier>{7bd2bebb-143f-484d-84a7-8ac4e2615037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logging">
+      <UniqueIdentifier>{6829271e-6b80-4796-a63f-e0ed60755318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logging\include">
+      <UniqueIdentifier>{e6ba53a1-0a50-4486-ae1d-8073c31ccda6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logging\source">
+      <UniqueIdentifier>{0b225a90-4327-4294-89e5-19549a3962d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Outputs">
+      <UniqueIdentifier>{d305497a-ba49-4b69-abc5-8592abe43f79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Outputs\include">
+      <UniqueIdentifier>{9672e2ad-dac9-4a2e-827c-cd7e6173baed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Outputs\source">
+      <UniqueIdentifier>{e87527cd-96ef-404b-bcaa-71ed43e94f4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptReader">
+      <UniqueIdentifier>{cfff2425-b328-41fc-b676-d8ef1892ca18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptReader\include">
+      <UniqueIdentifier>{693afeb0-da83-4c1a-9c5e-59b1ab57bf9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptReader\source">
+      <UniqueIdentifier>{8b9521fa-87cc-4a6b-a62b-714370aed119}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestHarnessDefines.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestCase.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestCaseArgument.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestFixtureTestCaseNames.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestFixture.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestCaseHolder.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestDllManager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestRunSummary.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestTypes.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestEngineImplementation.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestInfoObject.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestInfoObject.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

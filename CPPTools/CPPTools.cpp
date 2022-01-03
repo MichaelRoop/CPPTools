@@ -31,21 +31,31 @@ private:
 };
 
 
-//#define LOG_LEVEL_INFO
-#define LOG_LEVEL_ERR
+#define LOG_LEVEL_INFO
+//#define LOG_LEVEL_ERR
 #define LOG_MSGS
 #include "..\CppLogger\CppLoggerDefines.h"
+
+#include "../CppTestHarness/include/ICppTestCaseArgument.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
 
     LOG_INFO("This is Info:" << 234)
-    LOG_DBG("This is Debug:" << 345)
-    LOG_WARN("This is Warning:" << 2001)
-    LOG_ERR("This is Error:" << 5002)
+        LOG_DBG("This is Debug:" << 345)
+        LOG_WARN("This is Warning:" << 2001)
+        LOG_ERR("This is Error:" << 5003)
 
+        CppTestHarness::ICaseArgument tc;
+    
+    tc.Name = L"BLIP";
+    tc.Value = L"BLOP";
+    LOG_INFO(CppUtils::WideToNarrowString(tc.Name))
+    LOG_INFO(CppUtils::WideToNarrowString(tc.Value));
 
+    std::string s("regular string wide to narrow");
+    LOG_INFO(CppUtils::WideToNarrowString(s));
 
 
     //Processor<Process1> p1;

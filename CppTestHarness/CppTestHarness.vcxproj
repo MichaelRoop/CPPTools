@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d0e51727-9411-4b50-a23f-e1b885008c84}</ProjectGuid>
-    <RootNamespace>CPPTools</RootNamespace>
+    <ProjectGuid>{e58495b2-5ad7-4a8e-b7d9-15310c381e88}</ProjectGuid>
+    <RootNamespace>CppTestHarness</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -86,12 +86,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPP_USE_WIDE_STR</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPTESTHARNESS_EXPORTS;CPP_USE_WIDE_STR</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,26 +104,34 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPP_USE_WIDE_STR</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPTESTHARNESS_EXPORTS;CPP_USE_WIDE_STR</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPP_USE_WIDE_STR</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPTESTHARNESS_EXPORTS;CPP_USE_WIDE_STR</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,26 +140,39 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPP_USE_WIDE_STR</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPTESTHARNESS_EXPORTS;CPP_USE_WIDE_STR</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CPPTools.cpp" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="include\CppTestHarnessDefines.h" />
+    <ClInclude Include="include\ICppTestCase.h" />
+    <ClInclude Include="include\ICppTestCaseArgument.h" />
+    <ClInclude Include="include\ICppTestFixtureTestCaseNames.h" />
+    <ClInclude Include="include\ICppTestFixture.h" />
+    <ClInclude Include="include\ICppTestCaseHolder.h" />
+    <ClInclude Include="include\ICppTestDllManager.h" />
+    <ClInclude Include="include\ICppTestRunSummary.h" />
+    <ClInclude Include="include\CppTestTypes.h" />
+    <ClInclude Include="include\ICppTestEngineImplementation.h" />
+    <ClInclude Include="include\CppTestInfoObject.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CppLogger\CppLogger.vcxproj">
-      <Project>{8c2a77c8-5029-4f28-8185-3ed6192155b5}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\CppTestHarness\CppTestHarness.vcxproj">
-      <Project>{e58495b2-5ad7-4a8e-b7d9-15310c381e88}</Project>
-    </ProjectReference>
+    <ClCompile Include="Core\source\CppTestInfoObject.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\CPPVariousUtils\CPPVariousUtils.vcxproj">
       <Project>{975afafc-bdb1-41f1-a758-177b3f1bd5cb}</Project>
     </ProjectReference>
