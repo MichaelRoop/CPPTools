@@ -16,7 +16,7 @@ namespace CppUtils {
 }
 
 // Force export of std file stream template classe with different char types 
-#if defined(_WIN32) 
+#if defined(_WIN32) || defined (_WIN64) 
 	// DONT THINK EXPORT TEMPLATE CLASS with CPPUTILS_API
 	EXP_UTILS_TEMPLATE template class std::basic_filebuf<wchar_t, std::char_traits<wchar_t> >;
 	EXP_UTILS_TEMPLATE template class std::basic_filebuf<char, std::char_traits<char> >;

@@ -153,13 +153,14 @@ namespace CppUtils {
 	///	@tparam	The object to do a name lookup on.
 	//
 	///--------------------------------------------------------------------------------------
-	template<class T, class T2> class isNamed {
+	template<class T, class T2> class IsNamed {
 	public:
 
 		/// @brief	Constructor.
 		///
 		/// @param	name	The name to compare through the iterations.
-		isNamed(const T2& name) : m_name(name) {
+		IsNamed(const T2& name) : m_name(name) {
+			//m_name = name;
 		}
 
 
@@ -169,7 +170,7 @@ namespace CppUtils {
 		///
 		/// @return	true if the name matches, otherwise false.
 		bool operator () (const T& theObj) {
-			return theObj.name() == m_name;
+			return theObj.Name() == m_name;
 		}
 
 	private:

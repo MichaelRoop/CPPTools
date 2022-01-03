@@ -16,12 +16,12 @@ namespace CppUtils {
 
 
 // Force export of i and o stream template class with different char types
-//#if defined(WIN32) 
-//	EXP_TEMPLATE template class CPPTESTUTILS_API std::basic_ostream<wchar_t, std::char_traits<wchar_t> >;
-//	EXP_TEMPLATE template class CPPTESTUTILS_API std::basic_ostream<wchar_t, std::char_traits<wchar_t> >;
-//	EXP_TEMPLATE template class CPPTESTUTILS_API std::basic_istream<char, std::char_traits<char> >;
-//	EXP_TEMPLATE template class CPPTESTUTILS_API std::basic_ostream<char, std::char_traits<char> >;
-//#endif
+#if defined(_WIN32) || defined (_WIN64) 
+	EXP_UTILS_TEMPLATE template class std::basic_ostream<wchar_t, std::char_traits<wchar_t> >;
+	EXP_UTILS_TEMPLATE template class std::basic_ostream<wchar_t, std::char_traits<wchar_t> >;
+	EXP_UTILS_TEMPLATE template class std::basic_istream<char, std::char_traits<char> >;
+	EXP_UTILS_TEMPLATE template class std::basic_ostream<char, std::char_traits<char> >;
+#endif
 
 }
 

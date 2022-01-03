@@ -9,21 +9,21 @@
 	#if defined(CPPVARIOUSUTILS_EXPORTS)
 		#pragma message("Exporting CppVariousUtils DLL Classes")
 		#define CPPUTILS_API __declspec(dllexport)
-		#define EXP_TEMPLATE
+		#define EXP_UTILS_TEMPLATE
 	#else
 		#pragma message("Importing CppVariousUtils DLL Classes")
 		#define CPPUTILS_API __declspec(dllimport)
-		#define EXP_TEMPLATE extern
+		#define EXP_UTILS_TEMPLATE extern
 	#endif
 #elif defined(__linux) || defined(_linux_)
 	#if defined(CPPVARIOUSUTILS_EXPORTS)
 		#pragma message("Exporting CppVariousUtils DLL Classes")
 		#define CPPUTILS_API
-		#define EXP_TEMPLATE
+		#define EXP_UTILS_TEMPLATE
 	#else
 		#pragma message("Importing CppVariousUtils DLL Classes")
 		#define CPPUTILS_API
-		#define EXP_TEMPLATE extern
+		#define EXP_UTILS_TEMPLATE extern
 	#endif
 #else
 #   pragma message("*** Neither WIN or Linux defined ***")

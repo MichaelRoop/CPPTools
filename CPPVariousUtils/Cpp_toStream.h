@@ -11,7 +11,7 @@
 namespace CppUtils {
 
 	// Forward declaration for compiler errors.
-	template<class T, class T2> class CPPUTILS_API ToStreamClass;
+	template<class T, class T2> class ToStreamClass;
 
 	// Forward declaration for compiler errors.
 	template<class T, class T2> class ToStreamVecClass;
@@ -40,7 +40,7 @@ namespace CppUtils {
 	//------------------------------------------------------------------------------------------------
 
 
-	template<class T, class T2> class CPPUTILS_API ToStreamClass {
+	template<class T, class T2> class ToStreamClass {
 	public:
 		static void streamOut(T2& os, const T& value) {
 			os << value;
@@ -59,7 +59,6 @@ namespace CppUtils {
 
 		T2& m_os;
 
-
 		/// @brief	Assignment operator to satisfy compiler warnings.
 		ToStreamClass& operator = (const ToStreamClass& rhs) {
 			if (&rhs != this) {
@@ -71,7 +70,7 @@ namespace CppUtils {
 
 
 	// Class specialisation to bridge between wide char to narrow char output stream.
-	template<> class CPPUTILS_API ToStreamClass<std::wstring, std::ostream> {
+	template<> class ToStreamClass<std::wstring, std::ostream> {
 	public:
 		static void streamOut(std::ostream& os, const std::wstring& value) {
 			os << CppUtils::WideToNarrowString(value);
@@ -80,7 +79,7 @@ namespace CppUtils {
 
 
 	// Class specialisation to bridge between narrow char to wide output stream.
-	template<> class CPPUTILS_API ToStreamClass<std::string, std::wostream> {
+	template<> class ToStreamClass<std::string, std::wostream> {
 	public:
 		static void streamOut(std::wostream& os, const std::string& value) {
 			os << CppUtils::NarrowToWideString(value);
@@ -129,7 +128,7 @@ namespace CppUtils {
 
 
 	// Class to stream out vector of values.
-	template<class T, class T2> class ToStreamVecClass {
+	template<class T, class T2> class CPPUTILS_API ToStreamVecClass {
 	public:
 		static void streamOut(const std::vector<T>& values, T2& outputFormater) {
 			std::for_each(values.begin(), values.end(), outputFormater);

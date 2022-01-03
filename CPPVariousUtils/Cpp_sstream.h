@@ -34,9 +34,9 @@ CPPUTILS_API void ResetStringStream(Cpp_stringstream& ss);
 
 
 	// Force export of std string stream template classe with different char types 
-#if defined(WIN) 
-	EXP_TEMPLATE template class CPPUTILS_API std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >;
-	EXP_TEMPLATE template class CPPUTILS_API std::basic_stringstream<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >;
+#if defined(_WIN32) || defined (_WIN64) 
+	EXP_UTILS_TEMPLATE template class std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >;
+	EXP_UTILS_TEMPLATE template class std::basic_stringstream<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >;
 #endif
 
 }
