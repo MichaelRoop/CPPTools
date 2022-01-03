@@ -41,7 +41,7 @@ namespace CPPRTTestCases {
 		TEST_METHOD(T01_01_DefaultConstructor) {
 			// Sample log output
 			int i = 1000001;
-			LOGMSG("Blippy poo:" << i)
+			LOG_DBG("Blippy poo:" << i)
 			CppSharedPtr<TstClass> sp1;
 			Assert::AreEqual((unsigned)0, sp1.Count(), L"sp1 count default constructor");
 		}

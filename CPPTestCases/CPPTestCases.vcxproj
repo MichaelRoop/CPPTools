@@ -172,6 +172,9 @@
     <ProjectReference Include="..\CPPContainers\CPPContainers.vcxproj">
       <Project>{35fad8f1-0807-4d35-80a8-7aa0a5485ec7}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\CppLogger\CppLogger.vcxproj">
+      <Project>{8c2a77c8-5029-4f28-8185-3ed6192155b5}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\CppStateMachine\CppStateMachine.vcxproj">
       <Project>{3912effa-fa09-4e8b-8c8c-350838b72a4b}</Project>
     </ProjectReference>
