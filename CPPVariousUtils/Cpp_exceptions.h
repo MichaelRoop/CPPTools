@@ -28,7 +28,7 @@ namespace CppUtils {
 	///		}										
 	/// 
 	/// </summary>
-	class CPPUTILS_API Cpp_exception : std::exception {
+	class CPPUTILS_API Cpp_exception : public std::exception {
 	public:
 		
 		Cpp_exception();

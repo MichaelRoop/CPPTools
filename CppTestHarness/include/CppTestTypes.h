@@ -23,7 +23,7 @@ typedef void (* DataLoggedEvent) (const CppTestHarness::ICase&);
 
 /// @brief	Typedef of a call back event that will be called to send back summary data from the entire
 ///			group of test case run
-typedef void (* TestRunSummaryData) (const MrTest::IRunSummary&);
+typedef void (* TestRunSummaryData) (const IRunSummary&);
 
 } // end namespace
 

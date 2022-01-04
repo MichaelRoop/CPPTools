@@ -198,6 +198,9 @@
     <ClInclude Include="ScriptReader\include\CppTestScriptReaderBase.h">
       <Filter>ScriptReader\include</Filter>
     </ClInclude>
+    <ClInclude Include="Dlls\include\CppTestDllManager.h">
+      <Filter>Dlls\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -208,6 +211,27 @@
     </ClCompile>
     <ClCompile Include="Core\source\CppTestAssert.cpp">
       <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestCase.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestCaseCounter.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestCaseHolder.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestCompareFunctions.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestEngine.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestEngineImplementation.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Dlls\source\CppTestDllManager.cpp">
+      <Filter>Dlls\source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

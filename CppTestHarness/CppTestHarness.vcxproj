@@ -162,6 +162,7 @@
     <ClInclude Include="Core\include\CppTestSegfaultHandler.h" />
     <ClInclude Include="Core\include\CppTestWinFaultHandler.h" />
     <ClInclude Include="Core\include\CppTestVectorTestCaseNamesReader.h" />
+    <ClInclude Include="Dlls\include\CppTestDllManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="include\CppTestHarnessDefines.h" />
     <ClInclude Include="include\ICppTestCase.h" />
@@ -198,7 +199,14 @@
   <ItemGroup>
     <ClCompile Include="Core\source\CppTestInfoObject.cpp" />
     <ClCompile Include="Core\source\CppTestAssert.cpp" />
+    <ClCompile Include="Core\source\CppTestCase.cpp" />
+    <ClCompile Include="Core\source\CppTestCaseCounter.cpp" />
+    <ClCompile Include="Core\source\CppTestCaseHolder.cpp" />
+    <ClCompile Include="Core\source\CppTestCompareFunctions.cpp" />
+    <ClCompile Include="Core\source\CppTestEngine.cpp" />
+    <ClCompile Include="Core\source\CppTestEngineImplementation.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Dlls\source\CppTestDllManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CPPVariousUtils\CPPVariousUtils.vcxproj">
