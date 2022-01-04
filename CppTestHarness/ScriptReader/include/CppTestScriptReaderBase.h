@@ -3,6 +3,7 @@
 
 #include "ICppTestScriptReader.h"
 
+
 namespace CppTestHarness {
 
 	/// <summary>
@@ -22,9 +23,9 @@ namespace CppTestHarness {
 		/// @param	argDelimiter	Delimiter to tokenize the argument portion of the
 		///							line into separate arguments.
 		ScriptReaderBase(
-			const CppUtils::Cpp_string& origine,
-			CppUtils::Cpp_char nameDelimiter = _L_('$'),
-			CppUtils::Cpp_char argDelimiter = _L_('|'));
+			const Cpp_string& origine, 
+			Cpp_char nameDelimiter = _L_('$'), 
+			Cpp_char argDelimiter = _L_('|'));
 
 
 		/// @brief	Helper method to process one line of the script file.
@@ -33,16 +34,16 @@ namespace CppTestHarness {
 		/// @param	testInfo	The testInfoObject to populate from the script file.
 		/// @param	str			The line as read from the file.
 		void ProcessLine(
-			CppUtils::Cpp_string& fixtureName, 
+			Cpp_string& fixtureName, 
 			TestInfoObject& testInfo, 
-			CppUtils::Cpp_string str);
+			Cpp_string str);
 
 
 		/// @brief	Helper method to process the arguments portion of the script line.
 		///	@throw	Throws a scriptException on failure
 		/// @param	testInfo	The testInfoObject to populate from the script file.
 		/// @param	args		The args portion of the script line.
-		void ProcessArgs(TestInfoObject& testInfo, const CppUtils::Cpp_string& args);
+		void ProcessArgs(TestInfoObject& testInfo, const Cpp_string& args);
 
 
 		/// @brief	Helper method to process one argument string token.
@@ -50,7 +51,7 @@ namespace CppTestHarness {
 		///	@throw	Throws a scriptException on failure
 		/// @param	testInfo	The testInfoObject to populate from the script file.
 		/// @param	args		The arg token from the script line.
-		void ProcessArg(TestInfoObject& testInfo, const CppUtils::Cpp_string& arg);
+		void ProcessArg(TestInfoObject& testInfo, const Cpp_string& arg);
 
 
 		/// @brief	Extracts name on first call and value on second.
@@ -59,9 +60,7 @@ namespace CppTestHarness {
 		/// @param	str		The argument string.
 		/// @param	token	The string token to be extracted from the argument string.
 		void GetArgComponent(
-			CppUtils::Cpp_string::size_type& pos,
-			const CppUtils::Cpp_string& str,
-			CppUtils::Cpp_string& token) const;
+			Cpp_string::size_type& pos, const Cpp_string& str, Cpp_string& token) const;
 
 
 		/// @brief	Wrapper to clean up checking for exception throw.
@@ -76,8 +75,8 @@ namespace CppTestHarness {
 			bool condition,
 			const char* file,
 			int line,
-			const CppUtils::Cpp_string& msg,
-			const CppUtils::Cpp_string& scriptLine = _L_("")) const;
+			const Cpp_string& msg,
+			const Cpp_string& scriptLine = _L_("")) const;
 
 
 		/// @brief	Wrapper to clean up checking for exception throw.
@@ -91,15 +90,15 @@ namespace CppTestHarness {
 			bool condition,
 			const char* file,
 			int line,
-			const CppUtils::Cpp_string& msg) const;
+			const Cpp_string& msg) const;
 
 	private:
-		CppUtils::Cpp_char m_nameDelimiter;
-		CppUtils::Cpp_char m_argDelimiter;
-		CppUtils::Cpp_string m_origine;
+		Cpp_char m_nameDelimiter;
+		Cpp_char m_argDelimiter;
+		Cpp_string m_origine;
 
 		/// @brief	Default constructor
-		ScriptReaderBase() {}
+		ScriptReaderBase();
 
 	};
 

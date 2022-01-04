@@ -8,8 +8,8 @@
 ///
 /// Copyright 2010 Michael Roop
 ///--------------------------------------------------------------------------------------
-#if !defined(IMR_TEST_LOG_INITIALISER_H)
-#define IMR_TEST_LOG_INITIALISER_H
+#if !defined(ICPP_TEST_LOG_INITIALISER_H)
+#define ICPP_TEST_LOG_INITIALISER_H
 
 
 #include "mr_string.h"

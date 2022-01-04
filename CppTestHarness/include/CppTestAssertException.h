@@ -34,7 +34,7 @@ namespace CppTestHarness {
 		/// @param	file			The source code file where problem originates.
 		/// @param	line			The source code line where problem originates.
 		/// @param	msg				The message explaining the exception.
-		AssertException(const char* file, int line, const CppUtils::Cpp_string& msg);
+		AssertException(const char* file, int line, const Cpp_string& msg);
 
 
 		/// @brief	Copy Constructor.

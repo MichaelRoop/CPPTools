@@ -11,7 +11,7 @@ namespace CppTestHarness {
 
 		CppUtils::Cpp_string currentFixtureName = _L_("");
 		CppUtils::Cpp_string newFixtureName = _L_("");
-		TestInfoObject info = theReader.getNextTest(newFixtureName);
+		TestInfoObject info = theReader.GetNextTest(newFixtureName);
 
 		CppUtils::CppSharedPtr<ITestFixtureInfoObject> fixtureInfo;
 
@@ -34,7 +34,7 @@ namespace CppTestHarness {
 			fixtureInfo->AddTestInfo(info);
 
 			// get the next test info. If null push existing fixtureInfo so it is not lost
-			info = theReader.getNextTest(newFixtureName);
+			info = theReader.GetNextTest(newFixtureName);
 			if (info.IsNull() && fixtureInfo.IsValid()) {
 				list.push_back(fixtureInfo);
 			}

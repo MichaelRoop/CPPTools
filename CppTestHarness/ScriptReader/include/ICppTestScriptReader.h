@@ -31,7 +31,7 @@ namespace CppTestHarness {
 		/// @param	fixtureName	Name of the fixture for the test case.
 		/// @return	The populated testInfoObject for the test.  If the object has no more
 		///			script lines the testInfoObject.isValid() will return false.
-		virtual TestInfoObject getNextTest(CppUtils::Cpp_string& fixtureName) = 0;
+		virtual TestInfoObject GetNextTest(Cpp_string& fixtureName) = 0;
 
 	};
 

@@ -201,6 +201,15 @@
     <ClInclude Include="Dlls\include\CppTestDllManager.h">
       <Filter>Dlls\include</Filter>
     </ClInclude>
+    <ClInclude Include="ScriptReader\include\CppTestCommandLineReader.h">
+      <Filter>ScriptReader\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptReader\include\CppTestFileScriptReader.h">
+      <Filter>ScriptReader\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptReader\include\CppTestVectorLineReader.h">
+      <Filter>ScriptReader\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -243,6 +252,39 @@
       <Filter>Core\source</Filter>
     </ClCompile>
     <ClCompile Include="Core\source\CppTestListBuilder.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestListBuilderFactory.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptReader\source\CppTestCommandLineReader.cpp">
+      <Filter>ScriptReader\source</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptReader\source\CppTestFileScriptReader.cpp">
+      <Filter>ScriptReader\source</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptReader\source\CppTestScriptReaderBase.cpp">
+      <Filter>ScriptReader\source</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptReader\source\CppTestVectorLineReader.cpp">
+      <Filter>ScriptReader\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Exceptions\source\CppTestAssertException.cpp">
+      <Filter>Exceptions\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Exceptions\source\MrTestScriptException.cpp">
+      <Filter>Exceptions\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestParamParser.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestRunSummary.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestVectorTestCaseNamesReader.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestWinFaultHandler.cpp">
       <Filter>Core\source</Filter>
     </ClCompile>
   </ItemGroup>

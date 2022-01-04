@@ -195,6 +195,9 @@
     <ClInclude Include="include\CppTestMacros.h" />
     <ClInclude Include="ScriptReader\include\ICppTestScriptReader.h" />
     <ClInclude Include="ScriptReader\include\CppTestScriptReaderBase.h" />
+    <ClInclude Include="ScriptReader\include\CppTestCommandLineReader.h" />
+    <ClInclude Include="ScriptReader\include\CppTestFileScriptReader.h" />
+    <ClInclude Include="ScriptReader\include\CppTestVectorLineReader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\source\CppTestInfoObject.cpp" />
@@ -209,8 +212,19 @@
     <ClCompile Include="Core\source\CppTestFixtureInfoObject.cpp" />
     <ClCompile Include="Core\source\CppTestFixtureTestCaseNames.cpp" />
     <ClCompile Include="Core\source\CppTestListBuilder.cpp" />
+    <ClCompile Include="Core\source\CppTestListBuilderFactory.cpp" />
+    <ClCompile Include="Core\source\CppTestParamParser.cpp" />
+    <ClCompile Include="Core\source\CppTestRunSummary.cpp" />
+    <ClCompile Include="Core\source\CppTestVectorTestCaseNamesReader.cpp" />
+    <ClCompile Include="Core\source\CppTestWinFaultHandler.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Dlls\source\CppTestDllManager.cpp" />
+    <ClCompile Include="Exceptions\source\CppTestAssertException.cpp" />
+    <ClCompile Include="Exceptions\source\MrTestScriptException.cpp" />
+    <ClCompile Include="ScriptReader\source\CppTestCommandLineReader.cpp" />
+    <ClCompile Include="ScriptReader\source\CppTestFileScriptReader.cpp" />
+    <ClCompile Include="ScriptReader\source\CppTestScriptReaderBase.cpp" />
+    <ClCompile Include="ScriptReader\source\CppTestVectorLineReader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CPPVariousUtils\CPPVariousUtils.vcxproj">

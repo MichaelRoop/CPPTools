@@ -63,6 +63,9 @@
     <ClInclude Include="CppDoCompare.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CppFileException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cpp_string.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CppSingleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFileException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -9,6 +9,16 @@
 #if !defined(ICPP_TEST_HARNESS_DEFINES_H)
 #define ICPP_TEST_HARNESS_DEFINES_H
 
+#include "../CPPVariousUtils/Cpp_string.h"
+#include "../CPPVariousUtils/Cpp_char.h"
+#include "../CPPVariousUtils/CppSharedPtr.h"
+#include "../CPPVariousUtils/Cpp_sstream.h"
+
+using CppUtils::Cpp_string;
+using CppUtils::Cpp_char;
+using CppUtils::CppSharedPtr;
+using CppUtils::Cpp_stringstream;
+
 
 #if defined(_WIN32) || defined (_WIN64)
 #	include <Windows.h>
