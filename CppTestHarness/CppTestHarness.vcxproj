@@ -90,7 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include;$(SolutionDir)\CppIniFile</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -108,7 +108,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include;$(SolutionDir)\CppIniFile</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -126,7 +126,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include;$(SolutionDir)\CppIniFile</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -144,7 +144,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\Core\include;$(ProjectDir)\Exceptions\include;$(ProjectDir)\Factories\include;$(ProjectDir)\Logging\include;$(ProjectDir)\Outputs\include;$(ProjectDir)\ScriptReader\include;$(SolutionDir)\CppVariousUtils;$(ProjectDir)\Dlls\include;$(SolutionDir)\CppIniFile</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -163,6 +163,9 @@
     <ClInclude Include="Core\include\CppTestWinFaultHandler.h" />
     <ClInclude Include="Core\include\CppTestVectorTestCaseNamesReader.h" />
     <ClInclude Include="Dlls\include\CppTestDllManager.h" />
+    <ClInclude Include="Factories\include\CppTestLogFactory.h" />
+    <ClInclude Include="Factories\include\CppTestLogInitialiserFactory.h" />
+    <ClInclude Include="Factories\include\CppTestLogOutputFactory.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="include\CppTestHarnessDefines.h" />
     <ClInclude Include="include\ICppTestCase.h" />
@@ -193,6 +196,19 @@
     <ClInclude Include="include\CppTestParamParser.h" />
     <ClInclude Include="include\CppTestScriptException.h" />
     <ClInclude Include="include\CppTestMacros.h" />
+    <ClInclude Include="Logging\include\ICppTestLogInitialiser.h" />
+    <ClInclude Include="Logging\include\CppTestBuildColumnInfoString.h" />
+    <ClInclude Include="Logging\include\CppTestBuildColumnValueString.h" />
+    <ClInclude Include="Logging\include\CppTestBuildConsoleSummaryString.h" />
+    <ClInclude Include="Logging\include\CppTestBuildSummaryColumnValueString.h" />
+    <ClInclude Include="Logging\include\CppTestBuildTestCaseColumnValueString.h" />
+    <ClInclude Include="Logging\include\CppTestColumnBuilder.h" />
+    <ClInclude Include="Logging\include\CppTestFieldPair.h" />
+    <ClInclude Include="Logging\include\CppTestIniLogInitialiser.h" />
+    <ClInclude Include="Logging\include\CppTestLog.h" />
+    <ClInclude Include="Logging\include\CppTestSimpleLog.h" />
+    <ClInclude Include="Logging\include\CppTestSqlBuilder.h" />
+    <ClInclude Include="Logging\include\CppTestSqlLog.h" />
     <ClInclude Include="ScriptReader\include\ICppTestScriptReader.h" />
     <ClInclude Include="ScriptReader\include\CppTestScriptReaderBase.h" />
     <ClInclude Include="ScriptReader\include\CppTestCommandLineReader.h" />
@@ -221,12 +237,27 @@
     <ClCompile Include="Dlls\source\CppTestDllManager.cpp" />
     <ClCompile Include="Exceptions\source\CppTestAssertException.cpp" />
     <ClCompile Include="Exceptions\source\MrTestScriptException.cpp" />
+    <ClCompile Include="Logging\source\CppTestBuildColumnInfoString.cpp" />
+    <ClCompile Include="Logging\source\CppTestBuildColumnValueString.cpp" />
+    <ClCompile Include="Logging\source\CppTestBuildConsoleSummaryString.cpp" />
+    <ClCompile Include="Logging\source\CppTestBuildSummaryColumnValueString.cpp" />
+    <ClCompile Include="Logging\source\CppTestBuildTestCaseColumnValueString.cpp" />
+    <ClCompile Include="Logging\source\CppTestColumnBuilder.cpp" />
+    <ClCompile Include="Logging\source\CppTestIniLogInitialiser.cpp" />
+    <ClCompile Include="Logging\source\CppTestLog.cpp" />
+    <ClCompile Include="Logging\source\CppTestLogEngine.cpp" />
+    <ClCompile Include="Logging\source\CppTestSimpleLog.cpp" />
+    <ClCompile Include="Logging\source\CppTestSqlBuilder.cpp" />
+    <ClCompile Include="Logging\source\CppTestSqlLog.cpp" />
     <ClCompile Include="ScriptReader\source\CppTestCommandLineReader.cpp" />
     <ClCompile Include="ScriptReader\source\CppTestFileScriptReader.cpp" />
     <ClCompile Include="ScriptReader\source\CppTestScriptReaderBase.cpp" />
     <ClCompile Include="ScriptReader\source\CppTestVectorLineReader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CppIniFile\CppIniFile.vcxproj">
+      <Project>{6a14770e-2a79-412d-8a55-1ce31d2a2040}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\CPPVariousUtils\CPPVariousUtils.vcxproj">
       <Project>{975afafc-bdb1-41f1-a758-177b3f1bd5cb}</Project>
     </ProjectReference>

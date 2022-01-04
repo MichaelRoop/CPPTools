@@ -13,11 +13,14 @@
 #include "../CPPVariousUtils/Cpp_char.h"
 #include "../CPPVariousUtils/CppSharedPtr.h"
 #include "../CPPVariousUtils/Cpp_sstream.h"
+#include "../CPPVariousUtils/Cpp_exceptions.h"
+
 
 using CppUtils::Cpp_string;
 using CppUtils::Cpp_char;
 using CppUtils::CppSharedPtr;
 using CppUtils::Cpp_stringstream;
+using CppUtils::Cpp_exception;
 
 
 #if defined(_WIN32) || defined (_WIN64)

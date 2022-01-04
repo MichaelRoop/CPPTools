@@ -210,6 +210,54 @@
     <ClInclude Include="ScriptReader\include\CppTestVectorLineReader.h">
       <Filter>ScriptReader\include</Filter>
     </ClInclude>
+    <ClInclude Include="Logging\include\ICppTestLogInitialiser.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestBuildColumnInfoString.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestBuildColumnValueString.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestBuildConsoleSummaryString.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestBuildSummaryColumnValueString.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestBuildTestCaseColumnValueString.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestColumnBuilder.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestFieldPair.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestIniLogInitialiser.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestLog.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestSimpleLog.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestSqlBuilder.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\include\CppTestSqlLog.h">
+      <Filter>Logging\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Factories\include\CppTestLogFactory.h">
+      <Filter>Factories\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Factories\include\CppTestLogInitialiserFactory.h">
+      <Filter>Factories\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Factories\include\CppTestLogOutputFactory.h">
+      <Filter>Factories\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -286,6 +334,42 @@
     </ClCompile>
     <ClCompile Include="Core\source\CppTestWinFaultHandler.cpp">
       <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestBuildColumnInfoString.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestBuildColumnValueString.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestBuildConsoleSummaryString.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestBuildSummaryColumnValueString.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestBuildTestCaseColumnValueString.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestColumnBuilder.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestIniLogInitialiser.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestLog.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestLogEngine.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestSimpleLog.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestSqlBuilder.cpp">
+      <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\source\CppTestSqlLog.cpp">
+      <Filter>Logging\source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
