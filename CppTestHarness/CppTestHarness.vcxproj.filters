@@ -233,5 +233,17 @@
     <ClCompile Include="Dlls\source\CppTestDllManager.cpp">
       <Filter>Dlls\source</Filter>
     </ClCompile>
+    <ClCompile Include="Core\source\CppTestFixture.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestFixtureInfoObject.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestFixtureTestCaseNames.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestListBuilder.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -205,6 +205,10 @@
     <ClCompile Include="Core\source\CppTestCompareFunctions.cpp" />
     <ClCompile Include="Core\source\CppTestEngine.cpp" />
     <ClCompile Include="Core\source\CppTestEngineImplementation.cpp" />
+    <ClCompile Include="Core\source\CppTestFixture.cpp" />
+    <ClCompile Include="Core\source\CppTestFixtureInfoObject.cpp" />
+    <ClCompile Include="Core\source\CppTestFixtureTestCaseNames.cpp" />
+    <ClCompile Include="Core\source\CppTestListBuilder.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Dlls\source\CppTestDllManager.cpp" />
   </ItemGroup>

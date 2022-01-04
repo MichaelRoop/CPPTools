@@ -5,7 +5,7 @@
 #define ICPP_TEST_LIST_BUILDER_H
 
 #include "include/CppTestHarnessDefines.h"
-#include "../ScriptReader/include/IMrTestScriptReader.h"
+#include "../ScriptReader/include/ICppTestScriptReader.h"
 #include "include/ICppTestFixtureInfoObject.h"
 #include "../CPPVariousUtils/CppSharedPtr.h"
 #include "../CPPVariousUtils/Cpp_string.h"

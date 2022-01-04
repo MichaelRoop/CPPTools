@@ -50,7 +50,7 @@ namespace CppTestHarness {
 		/// @brief	Run the named test case contained in the fixture
 		/// @param	name	The test case name
 		/// @param	args	Arguments for the named test case
-		virtual void RunTest(CppUtils::Cpp_string& name, const TestCaseArguments& args);
+		virtual void RunTest(const CppUtils::Cpp_string& name, const TestCaseArguments& args);
 
 
 		/// @brief	Called after the last fixture test case has executed
