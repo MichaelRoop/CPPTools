@@ -258,6 +258,15 @@
     <ClInclude Include="Factories\include\CppTestLogOutputFactory.h">
       <Filter>Factories\include</Filter>
     </ClInclude>
+    <ClInclude Include="Outputs\include\CppTestConsoleOutput.h">
+      <Filter>Outputs\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Outputs\include\CppTestFileOutput.h">
+      <Filter>Outputs\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Outputs\include\CppTestOdbcOutput.h">
+      <Filter>Outputs\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -370,6 +379,24 @@
     </ClCompile>
     <ClCompile Include="Logging\source\CppTestSqlLog.cpp">
       <Filter>Logging\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Factories\source\CppTestLogFactory.cpp">
+      <Filter>Factories\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Factories\source\CppTestLogInitialiserFactory.cpp">
+      <Filter>Factories\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Factories\source\CppTestLogOutputFactory.cpp">
+      <Filter>Factories\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Outputs\source\CppTestConsoleOutput.cpp">
+      <Filter>Outputs\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Outputs\source\CppTestFileOutput.cpp">
+      <Filter>Outputs\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Outputs\source\CppTestOdbcOutput.cpp">
+      <Filter>Outputs\source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

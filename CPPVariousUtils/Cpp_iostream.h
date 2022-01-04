@@ -8,10 +8,10 @@ namespace CppUtils {
 
 #if defined(CPP_USE_WIDE_STR)
 	typedef std::wostream	Cpp_ostream;
-	#define mr_cout			std::wcout
+	#define Cpp_cout		std::wcout
 #else
 	typedef std::ostream	Cpp_ostream;
-	#define mr_cout			std::cout
+	#define Cpp_cout		std::cout
 #endif
 
 

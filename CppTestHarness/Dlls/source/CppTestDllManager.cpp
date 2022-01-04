@@ -45,7 +45,7 @@ namespace CppTestHarness {
 		}
 
 		void operator () (const std::string& s) {
-			mr_cout << _L_("Calling:") << s.c_str() << std::endl;
+			Cpp_cout << _L_("Calling:") << s.c_str() << std::endl;
 			// Get the pointer, cast it to a function pointer and invoke
 			#if defined(_WIN32) || defined(_WIN64)
 				((ptrFunc)(GET_DLL_FUNC_PTR(this->m_handle, s.c_str())))();
@@ -84,7 +84,7 @@ namespace CppTestHarness {
 		try {
 			// Load the DLL to trigger the dllMain. If using header parsing another handle 
 			// is opened just to read in the header information for export function names
-			mr_cout << L("Attempting open of ") << name.c_str() << std::endl;
+			Cpp_cout << L("Attempting open of ") << name.c_str() << std::endl;
 			this->m_dllHandle = OPEN_DLL(CppUtils::WideToNarrowString(name));
 			this->ValidateDllOpen(this->m_dllHandle, name);
 			this->ParseHeaderAndLoad(name.c_str());
@@ -131,7 +131,7 @@ namespace CppTestHarness {
 
 
 	void DllManager::ParseHeaderAndLoad(const CppUtils::Cpp_string& dllName) {
-		mr_cout << L("ParseHeaderAndLoad") << std::endl;
+		Cpp_cout << L("ParseHeaderAndLoad") << std::endl;
 
 		std::vector<std::string> funcNames = this->GetMethodNames(dllName);
 		std::for_each(
@@ -143,7 +143,7 @@ namespace CppTestHarness {
 
 	std::vector<std::string> DllManager::GetMethodNames(const CppUtils::Cpp_string& dllName) {
 		// TODO - resolve narrow and wide char here
-		mr_cout << L("GetMethodNames") << std::endl;
+		Cpp_cout << L("GetMethodNames") << std::endl;
 
 		std::vector<std::string> funcNames;
 
@@ -204,10 +204,10 @@ namespace CppTestHarness {
 
 
 	void DllManager::ValidateDllOpen(DLL_HANDLE handle, const CppUtils::Cpp_string& name) {
-		mr_cout << L("Validating Open of ") << name.c_str() << std::endl;
+		Cpp_cout << L("Validating Open of ") << name.c_str() << std::endl;
 
 		if (handle == DLL_HANDLE_NULL) {
-			mr_cout << name.c_str() << L(" handle is null") << std::endl;
+			Cpp_cout << name.c_str() << L(" handle is null") << std::endl;
 			CppUtils::Cpp_stringstream ss;
 			ss << _L_("Could not open DLL ") << name;
 #if defined(__linux) || defined(_linux_)
@@ -219,7 +219,7 @@ namespace CppTestHarness {
 
 			CppUtils::Cpp_exception::assertCondition(false, _FL_, ss.str());
 		}
-		mr_cout << name.c_str() << L(" handle is ok") << std::endl;
+		Cpp_cout << name.c_str() << L(" handle is ok") << std::endl;
 	}
 
 

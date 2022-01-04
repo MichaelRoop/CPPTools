@@ -26,14 +26,14 @@ namespace CppTestHarness {
 
 	TestInfoObject VectorFixtureTestCaseNames::GetNextTest(Cpp_string& fixtureName) {
 
-		mr_cout << L("GetNextTest") << std::endl;
+		Cpp_cout << L("GetNextTest") << std::endl;
 
 		TestInfoObject		testInfo;
 		if (this->m_fixtureIndex < this->m_infos.size()) {
-			mr_cout << L("Got fixture:") << this->m_infos[this->m_fixtureIndex]->FixtureName() << std::endl;
+			Cpp_cout << L("Got fixture:") << this->m_infos[this->m_fixtureIndex]->FixtureName() << std::endl;
 
 			if (this->m_infos[this->m_fixtureIndex]->TestCaseNames().size() == 0) {
-				mr_cout << L("No test cases") << std::endl;
+				Cpp_cout << L("No test cases") << std::endl;
 
 				// one iteration only for this info - fixture name only means execute all
 				testInfo.SetNull(false);
@@ -42,7 +42,7 @@ namespace CppTestHarness {
 			}
 			else {
 				if (this->m_testCaseIndex < this->m_infos[this->m_fixtureIndex]->TestCaseNames().size()) {
-					mr_cout << L("Test cases:") << this->m_infos[this->m_fixtureIndex]->TestCaseNames().size() << std::endl;
+					Cpp_cout << L("Test cases:") << this->m_infos[this->m_fixtureIndex]->TestCaseNames().size() << std::endl;
 
 					// Use current case of current fixture - Test case name has fixture.testCase already complete
 					testInfo.SetNull(false);

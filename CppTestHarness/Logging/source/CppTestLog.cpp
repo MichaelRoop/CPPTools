@@ -67,7 +67,7 @@ namespace CppTestHarness {
 
 		default:
 			Cpp_stringstream ss;
-			ss << _L_("Invalid testCase state:") << testCase.Status;
+			ss << _L_("Invalid testCase state:") << ICase::ToString(testCase.Status);
 			throw Cpp_exception(_FL_, ss.str());
 		}
 

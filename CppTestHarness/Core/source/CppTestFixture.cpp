@@ -207,7 +207,7 @@ namespace CppTestHarness {
 			throw;
 		}
 		catch (...) {
-			mr_cout << L("Caught ...") << std::endl;
+			Cpp_cout << L("Caught ...") << std::endl;
 			//throw;
 		}
 	}

@@ -209,6 +209,9 @@
     <ClInclude Include="Logging\include\CppTestSimpleLog.h" />
     <ClInclude Include="Logging\include\CppTestSqlBuilder.h" />
     <ClInclude Include="Logging\include\CppTestSqlLog.h" />
+    <ClInclude Include="Outputs\include\CppTestConsoleOutput.h" />
+    <ClInclude Include="Outputs\include\CppTestFileOutput.h" />
+    <ClInclude Include="Outputs\include\CppTestOdbcOutput.h" />
     <ClInclude Include="ScriptReader\include\ICppTestScriptReader.h" />
     <ClInclude Include="ScriptReader\include\CppTestScriptReaderBase.h" />
     <ClInclude Include="ScriptReader\include\CppTestCommandLineReader.h" />
@@ -237,6 +240,9 @@
     <ClCompile Include="Dlls\source\CppTestDllManager.cpp" />
     <ClCompile Include="Exceptions\source\CppTestAssertException.cpp" />
     <ClCompile Include="Exceptions\source\MrTestScriptException.cpp" />
+    <ClCompile Include="Factories\source\CppTestLogFactory.cpp" />
+    <ClCompile Include="Factories\source\CppTestLogInitialiserFactory.cpp" />
+    <ClCompile Include="Factories\source\CppTestLogOutputFactory.cpp" />
     <ClCompile Include="Logging\source\CppTestBuildColumnInfoString.cpp" />
     <ClCompile Include="Logging\source\CppTestBuildColumnValueString.cpp" />
     <ClCompile Include="Logging\source\CppTestBuildConsoleSummaryString.cpp" />
@@ -249,6 +255,9 @@
     <ClCompile Include="Logging\source\CppTestSimpleLog.cpp" />
     <ClCompile Include="Logging\source\CppTestSqlBuilder.cpp" />
     <ClCompile Include="Logging\source\CppTestSqlLog.cpp" />
+    <ClCompile Include="Outputs\source\CppTestConsoleOutput.cpp" />
+    <ClCompile Include="Outputs\source\CppTestFileOutput.cpp" />
+    <ClCompile Include="Outputs\source\CppTestOdbcOutput.cpp" />
     <ClCompile Include="ScriptReader\source\CppTestCommandLineReader.cpp" />
     <ClCompile Include="ScriptReader\source\CppTestFileScriptReader.cpp" />
     <ClCompile Include="ScriptReader\source\CppTestScriptReaderBase.cpp" />
