@@ -167,6 +167,17 @@
     <ClInclude Include="include\CppTestTypes.h" />
     <ClInclude Include="include\ICppTestEngineImplementation.h" />
     <ClInclude Include="include\CppTestInfoObject.h" />
+    <ClInclude Include="include\ICppTestFixtureInfoObject.h" />
+    <ClInclude Include="include\ICppTestListBuilder.h" />
+    <ClInclude Include="include\ICppTestLogOutput.h" />
+    <ClInclude Include="include\ICppTestLog.h" />
+    <ClInclude Include="include\CppTestAssertException.h" />
+    <ClInclude Include="include\CppTestAsserts.h" />
+    <ClInclude Include="include\CppTestCompareFunctions.h" />
+    <ClInclude Include="include\CppTestCase.h" />
+    <ClInclude Include="include\CppTestCaseHolder.h" />
+    <ClInclude Include="include\CppTestEngine.h" />
+    <ClInclude Include="ScriptReader\include\IMrTestScriptReader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\source\CppTestInfoObject.cpp" />

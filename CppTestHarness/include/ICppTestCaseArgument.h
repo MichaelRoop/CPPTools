@@ -60,7 +60,7 @@ namespace CppTestHarness {
 
 }
 
-/*TSTHARNESS_EXPORT*/ template class std::allocator<CppTestHarness::ICaseArgument>;
-/*TSTHARNESS_EXPORT*/ template class std::vector<CppTestHarness::ICaseArgument>;
+TSTHARNESS_EXPORT template class std::allocator<CppTestHarness::ICaseArgument>;
+TSTHARNESS_EXPORT template class std::vector<CppTestHarness::ICaseArgument>;
 
 #endif

@@ -60,6 +60,9 @@
     <ClInclude Include="Cpp_fstream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CppDoCompare.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cpp_string.cpp">

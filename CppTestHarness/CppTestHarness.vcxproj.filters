@@ -117,6 +117,39 @@
     <ClInclude Include="include\CppTestInfoObject.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\ICppTestFixtureInfoObject.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptReader\include\IMrTestScriptReader.h">
+      <Filter>ScriptReader\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestListBuilder.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestLogOutput.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICppTestLog.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestAssertException.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestAsserts.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestCompareFunctions.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestCase.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestCaseHolder.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestEngine.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

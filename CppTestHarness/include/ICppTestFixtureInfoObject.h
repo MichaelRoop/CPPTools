@@ -1,24 +1,21 @@
 ///--------------------------------------------------------------------------------------
-/// @file	IMrTestFixtureInfoObject.h
 /// @brief	cross platform and char width holder for test information.
 ///
 /// @author		Michael Roop
-/// @date		2010
-/// @version	1.0
+/// @date		2022
 ///
-/// Copyright 2010 Michael Roop
 ///--------------------------------------------------------------------------------------
-#if !defined(IMR_TEST_FIXTURE_INFO_OBJECT_H)
-#define IMR_TEST_FIXTURE_INFO_OBJECT_H
+#if !defined(ICPP_TEST_FIXTURE_INFO_OBJECT_H)
+#define ICPP_TEST_FIXTURE_INFO_OBJECT_H
 
-#include "MrTestDefines.h"
-#include "MrTestInfoObject.h"
-#include "mr_string.h"
-#include "mr_SharedPtr.h"
+#include "../include/CppTestHarnessDefines.h"
+#include "../include/CppTestInfoObject.h"
+#include "../CPPVariousUtils/Cpp_string.h"
+#include "../CPPVariousUtils/CppSharedPtr.h"
 #include <vector>
 
 
-namespace MrTest {
+namespace CppTestHarness {
 
 
 ///--------------------------------------------------------------------------------------
@@ -26,7 +23,7 @@ namespace MrTest {
 /// @brief	Class to abstract the information necessary to retrieve a Fixture of test cases
 ///
 ///--------------------------------------------------------------------------------------
-class MRTESCASE_API ITestFixtureInfoObject {
+class TSTHARNESS_API ITestFixtureInfoObject {
 
 public:
 
@@ -36,25 +33,25 @@ public:
 
 
 	/// @brief Retrieve Test fixture name
-	virtual const mr_utils::mr_string& GetName() const = 0;
+	virtual const  CppUtils::Cpp_string& GetName() const = 0;
 
 
 	/// @brief Set the Test fixture name
 	/// @brief	name	The test fixture name
-	virtual const void SetName(mr_utils::mr_string& name) = 0;
+	virtual const void SetName(CppUtils::Cpp_string& name) = 0;
 
 
 	/// @brief	Retrieve the argument set.
 	///
 	/// @return	The argument set.
-	virtual const std::vector<MrTest::TestInfoObject>& GetTestInfoVector() = 0;
+	virtual const std::vector<TestInfoObject>& GetTestInfoVector() = 0;
 
 
 	/// @brief	Add an argument to the argument set.
 	///
 	/// @param	name	The name of the argument.
 	/// @param	value	The value of the argument.
-	virtual void AddTestInfo(const MrTest::TestInfoObject& info) = 0;
+	virtual void AddTestInfo(const TestInfoObject& info) = 0;
 
 private:
 
@@ -68,7 +65,7 @@ private:
 } // end namespace
 
 // Force export of class with std objects
-MRTESCASE_EXP_TEMPLATE template class MRTESCASE_API std::allocator<MrTest::ITestFixtureInfoObject*>;
-MRTESCASE_EXP_TEMPLATE template class MRTESCASE_API std::vector<MrTest::ITestFixtureInfoObject*>;
+TSTHARNESS_EXPORT template class TSTHARNESS_API std::allocator<CppTestHarness::ITestFixtureInfoObject*>;
+TSTHARNESS_EXPORT template class TSTHARNESS_API std::vector<CppTestHarness::ITestFixtureInfoObject*>;
 
 #endif

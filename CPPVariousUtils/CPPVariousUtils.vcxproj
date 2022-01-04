@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CppDoCompare.h" />
     <ClInclude Include="CppSharedPtr.h" />
     <ClInclude Include="CppSingleton.h" />
     <ClInclude Include="CppStaticTimer.h" />

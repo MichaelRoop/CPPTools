@@ -19,17 +19,17 @@
 #	else
 #		pragma message("Importing CppHarness Classes")
 #		define TSTHARNESS_API __declspec(dllimport)
-#		define TSTHARNESS_EXP_TEMPLATE extern
+#		define TSTHARNESS_EXPORT extern
 #	endif
 #elif defined(__linux) || defined(_linux_)
 #	if defined(CPPTESTHARNESS_EXPORTS)
 #		pragma message("Exporting CppHarness Classes")
 #		define TSTHARNESS_API
-#		define TSTHARNESS_EXP_TEMPLATE
+#		define TSTHARNESS_EXPORT
 #	else
 #		pragma message("Importing CppHarness Classes")
 #		define TSTHARNESS_API
-#		define TSTHARNESS_EXP_TEMPLATE extern
+#		define TSTHARNESS_EXPORT extern
 #	endif
 #else
 #   pragma message("*** Neither _WIN32 or _WIN64 or Linux defined ***")
