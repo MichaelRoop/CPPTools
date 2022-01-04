@@ -120,7 +120,7 @@
     <ClInclude Include="include\ICppTestFixtureInfoObject.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="ScriptReader\include\IMrTestScriptReader.h">
+    <ClInclude Include="ScriptReader\include\ICppTestScriptReader.h">
       <Filter>ScriptReader\include</Filter>
     </ClInclude>
     <ClInclude Include="include\ICppTestListBuilder.h">
@@ -150,12 +150,63 @@
     <ClInclude Include="include\CppTestEngine.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\CppTestFixture.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestFixtureTestCaseNames.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestListBuilder.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestListBuilderFactory.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestLogEngine.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestParamParser.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestScriptException.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CppTestMacros.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\include\CppTestCaseCounter.h">
+      <Filter>Core\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\include\CppTestEngineImplementation.h">
+      <Filter>Core\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\include\CppTestFixtureInfoObject.h">
+      <Filter>Core\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\include\CppTestRunSummary.h">
+      <Filter>Core\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\include\CppTestSegfaultHandler.h">
+      <Filter>Core\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\include\CppTestWinFaultHandler.h">
+      <Filter>Core\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\include\CppTestVectorTestCaseNamesReader.h">
+      <Filter>Core\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptReader\include\CppTestScriptReaderBase.h">
+      <Filter>ScriptReader\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\source\CppTestInfoObject.cpp">
+      <Filter>Core\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\source\CppTestAssert.cpp">
       <Filter>Core\source</Filter>
     </ClCompile>
   </ItemGroup>

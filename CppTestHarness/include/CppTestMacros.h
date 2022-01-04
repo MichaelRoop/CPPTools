@@ -1,29 +1,22 @@
 ///--------------------------------------------------------------------------------------
-/// @file	mr_testMacros.h
 /// @brief	Macros useful for creating small footprint test cases.
-///
-/// @author		Michael Roop
-/// @date		2010
-/// @version	1.0
-///
-/// Copyright 2010 Michael Roop
 ///--------------------------------------------------------------------------------------
-#if !defined(MR_TEST_MACROS_H)
-#define MR_TEST_MACROS_H
+#if !defined(CPP_TEST_MACROS_H)
+#define CPP_TEST_MACROS_H
 
-#include "IMrTestFixture.h"
-#include "MrTestAsserts.h"
-#include "MrTestEngine.h"
-#include "mr_char.h"
-#include "mr_sstream.h"
-#include "mr_defines.h"
+#include "ICppTestFixture.h"
+#include "CppTestAsserts.h"
+#include "CppTestEngine.h"
+#include "../CPPVariousUtils/Cpp_char.h"
+#include "../CPPVariousUtils/Cpp_sstream.h"
+#include "CppTestHarnessDefines.h"
 
 
 static std::string MAIN_DLL_REG_FUNC("__nonWinCutTestCaseRegistrationMethod__");
 
 // Adding the test fixture to the engine
 #define ADD_TEST_FIXTURE( _fixtureClass_ )					\
-MrTest::Engine::Instance().RegisterCase( _fixtureClass_ );	\
+CppTestHarness::Engine::Instance().RegisterCase( _fixtureClass_ );	\
 
 
 // Create the fixture instance with a unique variable name. This will trigger the constructor which registers it 
@@ -83,37 +76,33 @@ extern "C" {																			\
 #define NON_PARSED_HEADER_REGISTER_BLOCK_END	} }
 
 
-
-
-
-
 //__nonWinCutTestCaseRegistrationMethod__
 
 
 
 // Register the class void method as the fixture setup method
 #define FIXTURE_SETUP( _fixture_,  _setup_ )		\
-	_fixture_->RegisterFixtureSetup(static_cast<MrTest::IFixture::Ifixture_method_ptr>( _setup_  ));			\
+	_fixture_->RegisterFixtureSetup(static_cast<CppTestHarness::IFixture::Ifixture_method_ptr>( _setup_  ));			\
 
 
 // Register the class void method as the fixture teardown method
 #define FIXTURE_TEARDOWN( _fixture_,  _teardown_ )		\
-_fixture_->RegisterFixtureTeardown(static_cast<MrTest::IFixture::Ifixture_method_ptr>( _teardown_  ));			\
+_fixture_->RegisterFixtureTeardown(static_cast<CppTestHarness::IFixture::Ifixture_method_ptr>( _teardown_  ));			\
 
 
 // Register the class void method as the test setup method
 #define TEST_SETUP( _fixture_,  _setup_ )		\
-_fixture_->RegisterTestSetup(static_cast<MrTest::IFixture::Ifixture_method_ptr>( _setup_  ));			\
+_fixture_->RegisterTestSetup(static_cast<CppTestHarness::IFixture::Ifixture_method_ptr>( _setup_  ));			\
 
 
 // Register the class void method as the test teardown method
 #define TEST_TEARDOWN( _fixture_,  _teardown_ )		\
-_fixture_->RegisterTestTeardown(static_cast<MrTest::IFixture::Ifixture_method_ptr>( _teardown_  ));			\
+_fixture_->RegisterTestTeardown(static_cast<CppTestHarness::IFixture::Ifixture_method_ptr>( _teardown_  ));			\
 
 
 // Register the class void method as the test method
 #define REGISTER_TEST( _fixture_, _test_, _desc_ )												\
-_fixture_->RegisterTest(static_cast<MrTest::IFixture::Ifixture_method_ptr>( _test_ ), _L_(#_test_), _L_(_desc_) );			\
+_fixture_->RegisterTest(static_cast<CppTestHarness::IFixture::Ifixture_method_ptr>( _test_ ), _L_(#_test_), _L_(_desc_) );			\
 
 
 //----------------------------------------------------------------------------------
@@ -122,11 +111,11 @@ _fixture_->RegisterTest(static_cast<MrTest::IFixture::Ifixture_method_ptr>( _tes
 
 
 #define TEST_EQUAL(_fixture_,_expected_, _actual_) \
-MrTest::AreEqual(_FL_, (_expected_), (_actual_), (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);
+CppTestHarness::AreEqual(_FL_, (_expected_), (_actual_), (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);
 
 
 #define TEST_NOT_EQUAL(_fixture_,_notexpected_, _actual_) \
-MrTest::AreNotEqual(_FL_, (_notexpected_), (_actual_), (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);
+CppTestHarness::AreNotEqual(_FL_, (_notexpected_), (_actual_), (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);
 
 
 #define TEST_EQUAL_EX(_fixture_,_expected_, _actual_,_userMsg_)								\
@@ -141,17 +130,17 @@ TEST_NOT_EQUAL(_fixture_,_notexpected_, _actual_)
 
 #define TEST_TRUE(_fixture_,_condition_,_msg_)												\
 (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer << _msg_;									\
-MrTest::IsTrue(_FL_, (_condition_), (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);
+CppTestHarness::IsTrue(_FL_, (_condition_), (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);
 
 
 #define TEST_FALSE(_fixture_,_condition_,_msg_)	\
 (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer << _msg_;									\
-MrTest::IsFalse(_FL_, (_condition_), (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);
+CppTestHarness::IsFalse(_FL_, (_condition_), (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);
 
 
 #define TEST_FAIL(_fixture_,_msg_)																				\
 (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer << _msg_;														\
-MrTest::Fail(_FL_, (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);	\
+CppTestHarness::Fail(_FL_, (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);	\
 
 
 //MRTESCASE_API void Fail(
@@ -173,11 +162,9 @@ do {																													\
 	catch (...)	{																										\
 		break;																											\
 	}																													\
-	MrTest::FailOnNotThrow(																								\
+	CppTestHarness::FailOnNotThrow(																								\
 		_FL_, (_fixture_)->CurrentTestCase().MsgBuffer, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);				\
 } while(false);																											\
-
-
 
 
 
@@ -189,28 +176,28 @@ do {																													\
 			_logic_																									\
 		}																											\
 	}																												\
-    catch (MrTest::AssertException& e) {																		\
-        MrTest::FailOnThrow(																						\
+    catch (CppTestHarness::AssertException& e) {																		\
+        CppTestHarness::FailOnThrow(																						\
             _FL_, (_fixture_)->CurrentTestCase().MsgBuffer, e, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);	\
     }																												\
-    catch (const MrTest::AssertException& e) {                                                                            \
-        MrTest::FailOnThrow(																						\
+    catch (const CppTestHarness::AssertException& e) {                                                                            \
+        CppTestHarness::FailOnThrow(																						\
             _FL_, (_fixture_)->CurrentTestCase().MsgBuffer, e, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);	\
     }																												\
-    catch (mr_utils::mr_exception& e) {																				\
-		MrTest::FailOnThrow(																						\
+    catch (CppUtils::Cpp_exception& e) {																				\
+		CppTestHarness::FailOnThrow(																						\
 			_FL_, (_fixture_)->CurrentTestCase().MsgBuffer, e, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);	\
 	}																												\
 	catch (const mr_utils::mr_exception& e) {																		\
-		MrTest::FailOnThrow(																						\
+		CppTestHarness::FailOnThrow(																						\
 			_FL_, (_fixture_)->CurrentTestCase().MsgBuffer, e, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);	\
 	}																												\
 	catch (std::exception& e) {																						\
-		MrTest::FailOnThrow(																						\
+		CppTestHarness::FailOnThrow(																						\
 			_FL_, (_fixture_)->CurrentTestCase().MsgBuffer, e, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);	\
 	}																												\
 	catch (const std::exception& e) {																				\
-		MrTest::FailOnThrow(																						\
+		CppTestHarness::FailOnThrow(																						\
 			_FL_, (_fixture_)->CurrentTestCase().MsgBuffer, e, (_fixture_)->CurrentTestCase().EmbeddedMsgBuffer);	\
 	}																												\
 	catch (...)	{																									\

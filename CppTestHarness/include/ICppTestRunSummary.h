@@ -13,7 +13,7 @@
 #include "include/CppTestHarnessDefines.h"
 #include "../CPPVariousUtils/Cpp_string.h"
 
-namespace MrTest {
+namespace CppTestHarness {
 
 	///--------------------------------------------------------------------------------------
 	///	@brief	Holder for test case summary data
@@ -31,6 +31,6 @@ namespace MrTest {
 
 	};
 
-} // end namespace MrTest::Case
+} 
 
 #endif

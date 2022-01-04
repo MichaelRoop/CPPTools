@@ -1,25 +1,18 @@
 ///--------------------------------------------------------------------------------------
-/// @file	MrTestSegfaultHandler.h
 /// @brief	Handle the cross platform selection of segfault capture 
-///
-/// @author		Michael Roop
-/// @date		2012
-/// @version	1.0
-///
-/// Copyright 2012 Michael Roop
 ///--------------------------------------------------------------------------------------
-#if !defined(MR_TEST_SEGFAULT_HANDLER_H)
-#define MR_TEST_SEGFAULT_HANDLER_H
+#if !defined(CPP_TEST_SEGFAULT_HANDLER_H)
+#define CPP_TEST_SEGFAULT_HANDLER_H
 
-#if defined (_WIN32)
-#	include "MrTestWinFaultHandler.h"
+#if defined (_WIN32) || defined (_WIN64)
+#	include "CppTestWinFaultHandler.h"
 #else
 #endif
 
-namespace MrTest {
+namespace CppTestHarness {
 
 
-#if defined (_WIN32)
+#if defined (_WIN32) || defined (_WIN64)
 #	define START_SEGFAULT_CATCH_BLOCK	__try {	
 #	define END_SEGFAULT_CATCH_BLOCK		} __except(WinExceptionHandler::Process(GetExceptionCode(), GetExceptionInformation(), this->m_currentTestCase)) {}
 #else

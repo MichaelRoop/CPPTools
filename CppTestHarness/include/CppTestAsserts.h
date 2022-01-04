@@ -51,8 +51,8 @@ namespace CppTestHarness {
 		if (!CppUtils::CompareEqual(expected, actual, buffer, ss.str())) {
 			throw AssertException(file, line, ss.str());
 		}
-		mr_utils::ResetStringStream(buffer);
-		mr_utils::ResetStringStream(userMsg);
+		CppUtils::ResetStringStream(buffer);
+		CppUtils::ResetStringStream(userMsg);
 	}
 
 
@@ -69,15 +69,15 @@ namespace CppTestHarness {
 	void AreNotEqual(
 		const char* file, int line, const T& nonexpected, const T& actual, CppUtils::Cpp_stringstream& buffer, CppUtils::Cpp_stringstream& userMsg) {
 
-		mr_utils::mr_stringstream ss;
+		CppUtils::Cpp_stringstream ss;
 		ss << _L_("Did not Expected '") << nonexpected << _L_("' but actual is '") << actual << _L_("'  ");
 		CreateMsg(ss, file, line, userMsg);
 
 		if (!CppUtils::CompareNotEqual(nonexpected, actual, buffer, ss.str())) {
 			throw AssertException(file, line, ss.str());
 		}
-		mr_utils::ResetStringStream(buffer);
-		mr_utils::ResetStringStream(userMsg);
+		CppUtils::ResetStringStream(buffer);
+		CppUtils::ResetStringStream(userMsg);
 	}
 
 
@@ -114,12 +114,12 @@ namespace CppTestHarness {
 	class ReportException
 	{
 	public:
-		static void ThrowReport(const char* file, int line, mr_utils::mr_stringstream& buffer, T& exception, mr_utils::mr_stringstream& userMsg) {
-			mr_utils::mr_stringstream ss;
+		static void ThrowReport(const char* file, int line, CppUtils::Cpp_stringstream& buffer, T& exception, CppUtils::Cpp_stringstream& userMsg) {
+			CppUtils::Cpp_stringstream ss;
 			ss << _L_("Did not Expected Unknown Exception ");
-			MrTest::CreateMsg(ss, file, line, userMsg);
+			CreateMsg(ss, file, line, userMsg);
 			buffer << ss.str().c_str();
-			throw MrTest::AssertException(file, line, ss.str());
+			throw AssertException(file, line, ss.str());
 		}
 	};
 
