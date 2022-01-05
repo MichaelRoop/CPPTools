@@ -1,4 +1,6 @@
-#pragma once
+#if !defined(CPP_INI_FILE_H)
+#define CPP_INI_FILE_H
+
 #include "CppIniFileDefines.h"
 #include "CppIniSection.h"
 
@@ -11,138 +13,115 @@ namespace CppIniFileNs {
 		typedef std::vector<CppIniSection> SectionVector;
 		typedef std::vector<CppIniSection>::iterator SectionIterator;
 
-
-		/// @brief	Constructor.
+		/// <summary>Default constructor</summary>
 		CppIniFile();
 
 
-		/// @brief	Constructor.
-		///
-		/// @param	filename	The name of the ini file.
-		CppIniFile(const CppUtils::Cpp_string& filename);
+		/// <summary>Constructor</summary>
+		/// <param name="filename">File name</param>
+		CppIniFile(const Cpp_string& filename);
 
 
-		/// @brief	Copy constructor.
-		///
-		/// @param	obj	The CppIniFile object used to construct this object.
+		/// <summary>Copy constructor</summary>
+		/// <param name="obj">The CppIniFile object used to construct this object</param>
 		CppIniFile(const CppIniFile& obj);
 
 
-		/// @brief	Assignment operator.
-		///
-		/// @param	rhs	The CppIniFile object used to initialise this object.
+		/// <summary>Assignment operator</summary>
+		/// <param name="rhs">Right hand side value</param>
+		/// <returns>The assigned object</returns>
 		CppIniFile& operator = (const CppIniFile& rhs);
 
 
-		/// @brief	Load the ini file into the object.
-		///
-		/// @param	filename	The name of the ini file.
-		///
-		/// @return	true if the load was successful, otherwise false.
-		bool Load(const CppUtils::Cpp_string& filename);
+		/// <summary>Load the ini file into the object</summary>
+		/// <param name="filename">File name</param>
+		/// <returns>true on success, otherwise false</returns>
+		bool Load(const Cpp_string& filename);
 
 
-		/// @brief	The ini file name.
-		///
-		/// @return	The ini file name.
-		const CppUtils::Cpp_string& Name() const;
+		/// <summary>The ini file name</summary>
+		/// <returns>The ini file name</returns>
+		const Cpp_string& Name() const;
 
 
-		/// @brief	Retrieves the named section.
-		///
-		///	WARNING:	This is an efficiency method.  It does not make a copy 
-		///				but exposes the raw vector of sections.  You must validate
-		///				the iterator against sections().end().  You must also 
-		///				validate each section with a call to section::isDataSection.
-		///
-		/// @param	name	The name of the section to retrieve.
-		///
-		/// @return The retrieved section 
-		SectionIterator GetSection(const CppUtils::Cpp_string& name);
+		/// <summary>
+		/// Retrieves the named section.
+		///	WARNING:	
+		/// This is an efficiency method.  It does not make a copy 
+		///	but exposes the raw vector of sections.  You must validate
+		///	the iterator against sections().end().  You must also 
+		///	validate each section with a call to section::isDataSection.
+		/// </summary>
+		/// <param name="name">The name of the section to retieve</param>
+		/// <returns>The retrieved section</returns>
+		SectionIterator GetSection(const Cpp_string& name);
 
 
-		/// @brief	Verifies if named section exists.
-		///
-		/// @param	name	The name of the section to check.
-		///
-		/// @return true if it exists and is a data section, otherwise false.
-		bool SectionExists(const CppUtils::Cpp_string& name);
+		/// <summary>Verifies if named section exists</summary>
+		/// <param name="name">The name of the section to check</param>
+		/// <returns>true if it exists and is a data section, otherwise false</returns>
+		bool SectionExists(const Cpp_string& name);
 
 
-		/// @brief	Verifies if named node from a named section exists.
-		///
-		/// @param	sectionName	The name of the section to check.
-		/// @param	nodeName	The name of the node to check.
-		///
-		/// @return true if it exists and is a data section, otherwise false.
-		bool NodeExists(const CppUtils::Cpp_string& sectionName, const CppUtils::Cpp_string& nodeName);
+		/// <summary>Verifies if named node from a named section exists</summary>
+		/// <param name="sectionName">Name of the section</param>
+		/// <param name="nodeName">Name of the node</param>
+		/// <returns>true if it exists as a data section, otherwise false</returns>
+		bool NodeExists(const Cpp_string& sectionName, const Cpp_string& nodeName);
+
+		
+		/// <summary>Retrieves value from the named section and key</summary>
+		/// <param name="sectionName">Section name</param>
+		/// <param name="nodeName">Node name</param>
+		/// <returns>The retrieved value or an empty string if not found</returns>
+		CppUtils::Cpp_string GetValue(const Cpp_string& sectionName, const Cpp_string& nodeName);
 
 
-		/// @brief	Retrieves value from the named section and key.
-		///
-		/// @param	sectionName	name of the section to retrieve.
-		/// @param	nodeName	name of the node that holds the value to retrieve.
-		///
-		/// @return	The retrieved value or an empty string if not found. 
-		CppUtils::Cpp_string GetValue(
-			const CppUtils::Cpp_string& sectionName,
-			const CppUtils::Cpp_string& nodeName
-		);
-
-
-		/// @brief	Add a section to the ini file.
-		///
-		/// @param	theSection	The section to add.
-		///
-		/// @return	true if successful, otherwise false.
+		/// <summary>Add a section to the ini file</summary>
+		/// <param name="theSection">The section to add</param>
+		/// <returns>true if successful, otherwise false</returns>
 		bool AddSection(const CppIniSection& theSection);
 
 
-		/// @brief	Retrieve a reference to the vector of sections.
+		/// <summary>
+		/// Retrieve a reference to the vector of sections.
 		///
-		///	WARNING:	This is an efficiency method.  It does not make a copy 
-		///				but exposes the raw vector of sections.  You must validate 
-		///				each section with a call to section::isDataSection.
-		///
-		/// @return	A reference to the vector of sections.
+		///	WARNING:	
+		/// This is an efficiency method.  It does not make a copy 
+		///	but exposes the raw vector of sections.  You must validate 
+		///	each section with a call to section::isDataSection.
+		/// </summary>
+		/// <returns>A reference to the vector of sections</returns>
 		const SectionVector& Sections() const;
 
 
-		/// @brief	Retrieve a copy of the vector of data sections.
-		///
-		/// @return	A vector of sections.
+		/// <summary>Retrieve a copy of the vector of data sections</summary>
+		/// <returns>A vector of sections</returns>
 		SectionVector GetSectionsCopy();
 
 
-		/// @brief	Retrieve a copy of the vector of data nodes from the named section.
-		///
-		/// @param	sectionName	name of the section to retrieve.
-		///
-		/// @return	A vector of nodes.
+		/// <summary>Retrieve a copy of the vector of data nodes from the named section</summary>
+		/// <param name="sectionName">name of the section to retrieve</param>
+		/// <returns>A vector of nodes</returns>
 		CppIniSection::NodeVector GetNodesCopy(const CppUtils::Cpp_string& sectionName);
-
 
 	private:
 
-		CppUtils::Cpp_string	m_filename;	///< File name of the ini file.
-		SectionVector			m_sections;	///< vector of sections.
+		Cpp_string m_filename;
+		SectionVector m_sections;
 
-
-		/// @brief	Initialise the ini file with another ini file.
-		///
-		/// @param	obj	The CppIniFile to use for its values.
+		/// <summary>Initialise the ini file with another ini file</summary>
+		/// <param name="obj">The CppIniFile to use for its values</param>
 		void Init(const CppIniFile& obj);
 
 	};
-
-
-	/// @brief	Streaming function for node object.
-	///
-	/// @param	os	The output stream.
-	/// @param	obj	The CppIniFile object to stream out.
-	///
-	/// @return	The output stream object.
-	CppUtils::Cpp_ostream& operator << (CppUtils::Cpp_ostream& os, const CppIniFile& obj);
-
+	
+	/// <summary>Streaming function for the ini file in global scope</summary>
+	/// <param name="os">The output stream</param>
+	/// <param name="obj">The CppIniFile to stream</param>
+	/// <returns>The output stream object</returns>
+	Cpp_ostream& operator << (Cpp_ostream& os, const CppIniFile& obj);
 
 }
+
+#endif // !defined(CPP_INI_FILE_H)

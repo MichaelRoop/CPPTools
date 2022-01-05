@@ -101,7 +101,7 @@ namespace CppTestHarness {
 		const char* file,
 		int line) {
 		Cpp_string token;
-		if (!CppUtils::MrTokenize(pos, str, token, delimiter)) {
+		if (!CppUtils::StrTokenize(pos, str, token, delimiter)) {
 			Cpp_stringstream os;
 			os << _L_("Malformed statement: ") << str.c_str();
 			Cpp_exception::assertCondition(false, file, line, os.str());

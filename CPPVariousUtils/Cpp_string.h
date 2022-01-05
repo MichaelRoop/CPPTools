@@ -83,7 +83,7 @@ namespace CppUtils {
 	/// @param	delimiter	The char delimiter that defines the boundry of the next token.
 	///
 	/// @return	true if a new token has been found, otherwise false.
-	CPPUTILS_API bool MrTokenize(
+	CPPUTILS_API bool StrTokenize(
 		Cpp_string::size_type& currentPos,
 		const Cpp_string& str,
 		Cpp_string& token,

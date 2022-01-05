@@ -1,11 +1,15 @@
 #include "CppIniFile.h"
-#include "../CPPVariousUtils/Cpp_char.h"
 #include "../CPPVariousUtils/Cpp_fstream.h"
 #include "../CPPVariousUtils/Cpp_functors.h"
 #include "../CPPVariousUtils/Cpp_toStream.h"
 #include "../CPPVariousUtils/Cpp_sstream.h"
 #include "../CPPVariousUtils/Cpp_exceptions.h"
 #include "CppIniInputLine.h"
+
+using CppUtils::Cpp_ifstream;
+using CppUtils::Cpp_stringstream;
+using CppUtils::Cpp_exception;
+using CppUtils::Cpp_char;
 
 namespace CppIniFileNs {
 
@@ -26,7 +30,7 @@ namespace CppIniFileNs {
 		}
 	
 	
-		CppIniFile::CppIniFile(const CppUtils::Cpp_string& filename) : m_filename(filename) {
+		CppIniFile::CppIniFile(const Cpp_string& filename) : m_filename(filename) {
 		}
 	
 	
@@ -50,32 +54,32 @@ namespace CppIniFileNs {
 		}
 	
 	
-		bool CppIniFile::Load(const CppUtils::Cpp_string& filename) {
+		bool CppIniFile::Load(const Cpp_string& filename) {
 			
 			m_sections.clear();
 	#if defined(_WIN32) || defined (_WIN64)
 			// The wchar_t for filename is a MS extension
-			CppUtils::Cpp_ifstream  script(filename.c_str());
+			Cpp_ifstream  script(filename.c_str());
 	#else
 			mr_utils::Cpp_ifstream  script(CppUtils::ToCharPtr(filename).c_str());
 	#endif
-			CppUtils::Cpp_stringstream ss;
+			Cpp_stringstream ss;
 			CppUtils::ToStream(ss, filename) << L(" cannot be opened");
-			CppUtils::Cpp_exception::assertCondition(script.is_open(), FL, ss.str());
+			Cpp_exception::assertCondition(script.is_open(), FL, ss.str());
 	
 			const int size = 2048;
-			std::vector<CppUtils::Cpp_char> buff;
+			std::vector<Cpp_char> buff;
 			buff.assign(size + 1, L('\0'));
-			CppIniSection			workingSection;
+			CppIniSection workingSection;
 			CppIniInputLine	inLine;
 	
 			while (script.getline(&buff[0], size)) {
-				inLine.Init(CppUtils::Cpp_string(&buff[0]));
+				inLine.Init(Cpp_string(&buff[0]));
 	
 				switch (inLine.TypeOf()) {
 				case INI_LINE_TYPE::SECTION:
 					this->AddSection(workingSection);
-					workingSection.SetName(inLine.firstValue());
+					workingSection.SetName(inLine.FirstValue());
 					break;
 				default:
 					if (workingSection.Name().empty()) {
@@ -106,22 +110,22 @@ namespace CppIniFileNs {
 		}
 	
 	
-		const CppUtils::Cpp_string& CppIniFile::Name() const {
+		const Cpp_string& CppIniFile::Name() const {
 			return m_filename;
 		}
 	
 	
-		CppIniFile::SectionIterator CppIniFile::GetSection(const CppUtils::Cpp_string& name) {
+		CppIniFile::SectionIterator CppIniFile::GetSection(const Cpp_string& name) {
 			return
 				std::find_if(
 					m_sections.begin(),
 					m_sections.end(),
-					CppUtils::IsNamed<CppIniSection, CppUtils::Cpp_string>(name)
+					CppUtils::IsNamed<CppIniSection, Cpp_string>(name)
 				);
 		}
 	
 	
-		bool CppIniFile::SectionExists(const CppUtils::Cpp_string& name) {
+		bool CppIniFile::SectionExists(const Cpp_string& name) {
 			SectionIterator it = this->GetSection(name);
 			if (it == m_sections.end() || !it->IsDataSection()) {
 				return false;
@@ -131,8 +135,8 @@ namespace CppIniFileNs {
 	
 	
 		bool CppIniFile::NodeExists(
-			const CppUtils::Cpp_string& sectionName,
-			const CppUtils::Cpp_string& nodeName) {
+			const Cpp_string& sectionName,
+			const Cpp_string& nodeName) {
 			if (this->SectionExists(sectionName)) {
 				return this->GetSection(sectionName)->NodeExists(nodeName);
 			}
@@ -140,11 +144,11 @@ namespace CppIniFileNs {
 		}
 	
 	
-		CppUtils::Cpp_string CppIniFile::GetValue(
-			const CppUtils::Cpp_string& sectionName,
-			const CppUtils::Cpp_string& nodeName) {
+		Cpp_string CppIniFile::GetValue(const Cpp_string& sectionName, const Cpp_string& nodeName) {
 			SectionIterator it = this->GetSection(sectionName);
-			return it == this->Sections().end() ? CppUtils::Cpp_string(L("")) : it->value(nodeName);
+			return it == this->Sections().end() 
+				? Cpp_string(L("")) 
+				: it->value(nodeName);
 		}
 	
 	
@@ -163,7 +167,7 @@ namespace CppIniFileNs {
 		}
 	
 	
-		CppIniSection::NodeVector CppIniFile::GetNodesCopy(const CppUtils::Cpp_string& sectionName) {
+		CppIniSection::NodeVector CppIniFile::GetNodesCopy(const Cpp_string& sectionName) {
 			if (this->SectionExists(sectionName)) {
 				return this->GetSection(sectionName)->GetNodesCopy();
 			}
@@ -171,11 +175,11 @@ namespace CppIniFileNs {
 		}
 	
 	
-		CppUtils::Cpp_ostream& operator << (CppUtils::Cpp_ostream& os, const CppIniFile& obj) {
+		Cpp_ostream& operator << (Cpp_ostream& os, const CppIniFile& obj) {
 			std::for_each(
 				obj.Sections().begin(),
 				obj.Sections().end(),
-				CppUtils::ToStreamClass<CppIniSection, CppUtils::Cpp_ostream>(os));
+				CppUtils::ToStreamClass<CppIniSection, Cpp_ostream>(os));
 			return os;
 		}
 	

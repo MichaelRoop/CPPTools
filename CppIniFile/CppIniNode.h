@@ -1,4 +1,7 @@
-#pragma once
+#if !defined(CPP_INI_NODE_H)
+#define CPP_INI_NODE_H
+
+
 #include "CppIniFileDefines.h"
 #include "CppIniInputLine.h"
 #include "CppIniTypes.h"
@@ -57,27 +60,23 @@ namespace CppIniFileNs {
 
 	private:
 
-		CppUtils::Cpp_string m_name;	///< Node name or non data value string.
-		CppUtils::Cpp_string m_value;	///< Node value.
-		INI_DATA_TYPE  		 m_type;	///< Defines if content is data.
-
+		Cpp_string m_name;
+		Cpp_string m_value;
+		INI_DATA_TYPE m_type;
 
 	};
-
-	/// @brief	Streaming function for node object.
-///
-/// @param	os		The output stream.
-/// @param	theNode	The node object to stream out.
-///
-/// @return	The output stream object.
-	CppUtils::Cpp_ostream& operator << (CppUtils::Cpp_ostream& os, const CppIniNode& theNode);
-
-
-
+	
+	/// <summary>Streaming function for ini node</summary>
+	/// <param name="os">The output stream</param>
+	/// <param name="node">The node to steam out</param>
+	/// <returns>The output stream</returns>
+	Cpp_ostream& operator << (Cpp_ostream& os, const CppIniNode& node);
 
 }
 
-//// Force export of template containing class
-//EXP_TEMPLATE template class CPPTESTUTILS_API std::allocator<mr_inireader::node>;
-//EXP_TEMPLATE template class CPPTESTUTILS_API std::vector<mr_inireader::node>;
+// Force export of template containing class
+CPPINI_EXTERN template class CPPINI_EXPORT std::allocator<CppIniFileNs::CppIniNode>;
+CPPINI_EXTERN template class CPPINI_EXPORT std::vector<CppIniFileNs::CppIniNode>;
 
+
+#endif

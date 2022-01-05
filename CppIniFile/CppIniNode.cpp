@@ -4,8 +4,8 @@ namespace CppIniFileNs {
 
 	CppIniNode::CppIniNode(const CppIniInputLine& inLine) {
 		// Always safe to copy over second value.
-		m_name = inLine.firstValue();
-		m_value = inLine.secondValue();
+		m_name = inLine.FirstValue();
+		m_value = inLine.SecondValue();
 		m_type = (inLine.TypeOf() == INI_LINE_TYPE::NODE
 			? INI_DATA_TYPE::VALID_DATA
 			: INI_DATA_TYPE::NON_DATA);
@@ -25,12 +25,12 @@ namespace CppIniFileNs {
 	}
 
 
-	const CppUtils::Cpp_string& CppIniNode::Value() const {
+	const Cpp_string& CppIniNode::Value() const {
 		return m_value;
 	}
 
 
-	const CppUtils::Cpp_string& CppIniNode::Name() const {
+	const Cpp_string& CppIniNode::Name() const {
 		return m_name;
 	}
 
@@ -52,7 +52,7 @@ namespace CppIniFileNs {
 	}
 
 
-	CppUtils::Cpp_ostream& operator << (CppUtils::Cpp_ostream& os, const CppIniNode& theNode) {
+	Cpp_ostream& operator << (Cpp_ostream& os, const CppIniNode& theNode) {
 		os << theNode.Name().c_str();
 		if (theNode.IsDataNode()) {
 			os << L("=") << theNode.Value().c_str();

@@ -50,7 +50,7 @@ protected:
 		CppUtils::Cpp_string::size_type pos = 0;
 		std::vector<CppUtils::Cpp_string>::size_type index;
 
-		for (index = 0; CppUtils::MrTokenize(pos, str, token, L('|')); index++) {
+		for (index = 0; CppUtils::StrTokenize(pos, str, token, L('|')); index++) {
 			this->CompareToken(index, token);
 		}
 

@@ -128,7 +128,7 @@ namespace CppUtils {
 	}
 
 
-	bool MrTokenize(Cpp_string::size_type& currentPos, const Cpp_string& str, Cpp_string& token, Cpp_char delimiter) {
+	bool StrTokenize(Cpp_string::size_type& currentPos, const Cpp_string& str, Cpp_string& token, Cpp_char delimiter) {
 		if (currentPos == CppUtils::StrNPos() || currentPos > str.length() - 1) {
 			return false;
 		}

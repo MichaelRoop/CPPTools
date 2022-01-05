@@ -1,4 +1,5 @@
-#pragma once
+#if !defined(CPP_INI_TYPES_H)
+#define CPP_INI_TYPES_H
 
 
 namespace CppIniFileNs {
@@ -14,9 +15,7 @@ namespace CppIniFileNs {
 	};
 
 
-	/// <summary>
-	/// 
-	/// </summary>
+	/// <summary>Type of line</summary>
 	enum class INI_LINE_TYPE {
 		BLANK,
 		COMMENT,
@@ -26,8 +25,6 @@ namespace CppIniFileNs {
 		UNDEFINED
 	};
 
-
-
 }
 
-
+#endif

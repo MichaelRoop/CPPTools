@@ -26,12 +26,11 @@ namespace CppIniFileNs {
 
 
 	CppIniSection::CppIniSection(const CppIniInputLine& input) {
-		m_name = input.firstValue();
+		m_name = input.FirstValue();
 		m_type = (input.TypeOf() == INI_LINE_TYPE::SECTION
 			? INI_DATA_TYPE::VALID_DATA
 			: INI_DATA_TYPE::NON_DATA);
 	}
-
 
 
 	CppIniSection::CppIniSection(const CppIniSection& obj) {
@@ -47,7 +46,7 @@ namespace CppIniFileNs {
 	}
 
 
-	const CppUtils::Cpp_string& CppIniSection::Name() const {
+	const Cpp_string& CppIniSection::Name() const {
 		return m_name;
 	}
 
@@ -62,7 +61,7 @@ namespace CppIniFileNs {
 	}
 
 
-	const CppUtils::Cpp_string& CppIniSection::value(const CppUtils::Cpp_string& name) const {
+	const Cpp_string& CppIniSection::value(const Cpp_string& name) const {
 		NodeIterator it = this->GetNode(name);
 		return (it == m_nodes.end() ? m_dummyVal : it->Value());
 	}
@@ -76,7 +75,7 @@ namespace CppIniFileNs {
 	}
 
 
-	void CppIniSection::SetName(const CppUtils::Cpp_string& name) {
+	void CppIniSection::SetName(const Cpp_string& name) {
 		// Setting the name always happens before loading in lines.
 		this->Clear();
 
@@ -85,16 +84,16 @@ namespace CppIniFileNs {
 	}
 
 
-	CppIniSection::NodeIterator CppIniSection::GetNode(const CppUtils::Cpp_string& name) const {
+	CppIniSection::NodeIterator CppIniSection::GetNode(const Cpp_string& name) const {
 		return std::find_if(
 			m_nodes.begin(),
 			m_nodes.end(),
-			CppUtils::IsNamed<CppIniNode, CppUtils::Cpp_string>(name)
+			CppUtils::IsNamed<CppIniNode, Cpp_string>(name)
 		);
 	}
 
 
-	bool CppIniSection::NodeExists(const CppUtils::Cpp_string& name) const {
+	bool CppIniSection::NodeExists(const Cpp_string& name) const {
 		NodeIterator it = this->GetNode(name);
 		if (it == m_nodes.end() || !it->IsDataNode()) {
 			return false;
@@ -121,13 +120,13 @@ namespace CppIniFileNs {
 	}
 
 
-	CppUtils::Cpp_ostream& operator << (CppUtils::Cpp_ostream& os, const CppIniSection& theSection) {
+	CppUtils::Cpp_ostream& operator << (Cpp_ostream& os, const CppIniSection& theSection) {
 		if (theSection.IsDataSection()) {
 			os << L("[") << theSection.Name().c_str() << L("]") << std::endl;
 			std::for_each(
 				theSection.Nodes().begin(),
 				theSection.Nodes().end(),
-				CppUtils::ToStreamClass<CppIniNode, CppUtils::Cpp_ostream>(os)
+				CppUtils::ToStreamClass<CppIniNode, Cpp_ostream>(os)
 			);
 		}
 		else {
@@ -135,7 +134,5 @@ namespace CppIniFileNs {
 		}
 		return os;
 	}
-
-
 
 }

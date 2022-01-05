@@ -5,7 +5,8 @@
 #include "../CPPVariousUtils/Cpp_iostream.h"
 //#include "../CPPVariousUtils/Cpp_char.h"
 
-
+using CppUtils::Cpp_string;
+using CppUtils::Cpp_ostream;
 
 #if defined (_WIN32) || defined (_WIN64)
 	#define WIN32_LEAN_AND_MEAN
