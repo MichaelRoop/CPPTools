@@ -20,8 +20,8 @@ namespace CppIniFileNs {
 
 		INI_LINE_TYPE Init(const Cpp_string& str) {
 			// Clean out any old values
-			m_firstValue = L("");
-			m_secondValue = L("");
+			m_firstValue = _L_("");
+			m_secondValue = _L_("");
 			m_type = INI_LINE_TYPE::UNDEFINED;
 			Cpp_string line = CppUtils::Trim(str);
 
@@ -57,7 +57,7 @@ namespace CppIniFileNs {
 		/// <param name="str">The string to analyse</param>
 		void CheckIfSectionName(const Cpp_string& str) {
 			if (m_type == INI_LINE_TYPE::UNDEFINED) {
-				if (str.size() > 2 && str[0] == L('[') && str[str.length() - 1] == L(']')) {
+				if (str.size() > 2 && str[0] == _L_('[') && str[str.length() - 1] == _L_(']')) {
 					m_type = INI_LINE_TYPE::SECTION;
 					m_firstValue = CppUtils::Trim(str.substr(1, str.length() - 2));
 				}
@@ -67,7 +67,7 @@ namespace CppIniFileNs {
 
 		void CheckIfComment(const Cpp_string& str) {
 			if (m_type == INI_LINE_TYPE::UNDEFINED) {
-				if (str[0] == L('#') || str[0] == L('*')) {
+				if (str[0] == _L_('#') || str[0] == _L_('*')) {
 					m_type = INI_LINE_TYPE::COMMENT;
 					m_firstValue = str;
 				}
@@ -77,11 +77,11 @@ namespace CppIniFileNs {
 
 		void CheckIfNode(const Cpp_string& str) {
 			if (m_type == INI_LINE_TYPE::UNDEFINED) {
-				Cpp_string::size_type pos = str.find(L("="));
+				Cpp_string::size_type pos = str.find(_L_("="));
 				if (pos > 0 && pos != Cpp_string::npos) {
 					Cpp_string name;
 					pos = 0;
-					if (CppUtils::StrTokenize(pos, str, name, L('='))) {
+					if (CppUtils::StrTokenize(pos, str, name, _L_('='))) {
 						// Check if there is any chars on left side of '='.
 						name = CppUtils::Trim(name);
 						if (!name.empty()) {
@@ -89,7 +89,7 @@ namespace CppIniFileNs {
 							m_firstValue = name;
 
 							/// @todo Probably just replace with substring of remainder of string.
-							CppUtils::StrTokenize(pos, str, m_secondValue, L('='));
+							CppUtils::StrTokenize(pos, str, m_secondValue, _L_('='));
 							m_secondValue = CppUtils::Trim(m_secondValue);
 						}
 					}
