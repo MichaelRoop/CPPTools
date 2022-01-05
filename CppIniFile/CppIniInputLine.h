@@ -7,7 +7,7 @@
 namespace CppIniFileNs {
 
 	/// <summary>Forward declaration of implementation object</summary>
-	class CppIniSectionImpl;
+	class CppIniInputLineImpl;
 
 	class CPPINI_EXPORT CppIniInputLine {
 	public:
@@ -53,7 +53,8 @@ namespace CppIniFileNs {
 
 	private:
 
-		CppIniSectionImpl* m_impl = NULL;
+		CppIniInputLineImpl* m_impl = NULL;
+		void FreeImplObj();
 
 
 		//Cpp_string	m_firstValue;

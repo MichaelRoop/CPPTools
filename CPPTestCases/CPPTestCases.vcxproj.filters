@@ -36,6 +36,9 @@
     <ClCompile Include="CppStringTokenizeTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CppIniInputLineTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestIncludes.h">

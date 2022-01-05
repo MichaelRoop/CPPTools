@@ -1,6 +1,6 @@
 #if !defined(CPP_INI_TYPES_H)
 #define CPP_INI_TYPES_H
-
+#include "CppIniFileDefines.h"
 
 namespace CppIniFileNs {
 
@@ -24,6 +24,9 @@ namespace CppIniFileNs {
 		GARBAGE,
 		UNDEFINED
 	};
+
+	CPPINI_EXPORT const Cpp_string ToString(const INI_LINE_TYPE& lineType);
+	CPPINI_EXPORT const Cpp_string ToString(const INI_DATA_TYPE& dataType);
 
 }
 

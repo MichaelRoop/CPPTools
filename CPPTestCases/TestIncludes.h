@@ -12,4 +12,6 @@
 #include "../CPPContainers/RTFifoQueue.h"
 #include "../CPPVariousUtils/Cpp_string.h"
 #include "../CPPVariousUtils/CppSharedPtr.h"
+#include "../CPPVariousUtils/Cpp_macroDefines.h"
+
 

@@ -2,18 +2,21 @@
 
 namespace CppIniFileNs {
 
-	class CppIniSectionImpl {
+	class CppIniInputLineImpl {
 
 	public:
-		CppIniSectionImpl() {
+		CppIniInputLineImpl() {
 			this->m_type = INI_LINE_TYPE::UNDEFINED;
 		}
 
-		CppIniSectionImpl(const Cpp_string& str) {
+		CppIniInputLineImpl(const Cpp_string& str) {
 			this->m_type = INI_LINE_TYPE::UNDEFINED;
 			this->Init(str);
 		}
 
+		~CppIniInputLineImpl() { 
+			// nothing to do
+		}
 
 		INI_LINE_TYPE Init(const Cpp_string& str) {
 			// Clean out any old values
@@ -109,23 +112,21 @@ namespace CppIniFileNs {
 
 
 	CppIniInputLine::CppIniInputLine() {
-		m_impl = new CppIniSectionImpl();
+		m_impl = new CppIniInputLineImpl();
 	}
 
 
 	CppIniInputLine::CppIniInputLine(const Cpp_string& str) {
-		m_impl = new CppIniSectionImpl(str);
+		FreeImplObj();
+		m_impl = new CppIniInputLineImpl(str);
 	}
 
 
 	CppIniInputLine::~CppIniInputLine() {
-		if (m_impl != NULL) {
-			delete m_impl;
-			m_impl = NULL;
-		}
+		FreeImplObj();
 	}
 
-	
+
 	INI_LINE_TYPE CppIniInputLine::Init(const Cpp_string& str) {
 		return m_impl->Init(str);
 	}
@@ -144,6 +145,15 @@ namespace CppIniFileNs {
 	INI_LINE_TYPE CppIniInputLine::TypeOf() const {
 		return m_impl->m_type;
 	}
+
+
+	void CppIniInputLine::FreeImplObj() {
+		if (m_impl != NULL) {
+			delete m_impl;
+			m_impl = NULL;
+		}
+	}
+
 
 	/*
 

@@ -163,6 +163,7 @@
     <ClCompile Include="CppIniInputLine.cpp" />
     <ClCompile Include="CppIniNode.cpp" />
     <ClCompile Include="CppIniSection.cpp" />
+    <ClCompile Include="CppIniTypes.cpp" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>

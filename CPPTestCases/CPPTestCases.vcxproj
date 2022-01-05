@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CppExceptionTests.cpp" />
+    <ClCompile Include="CppIniInputLineTests.cpp" />
     <ClCompile Include="CppSharedPtrTests.cpp" />
     <ClCompile Include="CppStateTests.cpp" />
     <ClCompile Include="CppStringTests.cpp" />
@@ -172,6 +173,9 @@
   <ItemGroup>
     <ProjectReference Include="..\CPPContainers\CPPContainers.vcxproj">
       <Project>{35fad8f1-0807-4d35-80a8-7aa0a5485ec7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\CppIniFile\CppIniFile.vcxproj">
+      <Project>{6a14770e-2a79-412d-8a55-1ce31d2a2040}</Project>
     </ProjectReference>
     <ProjectReference Include="..\CppLogger\CppLogger.vcxproj">
       <Project>{8c2a77c8-5029-4f28-8185-3ed6192155b5}</Project>
