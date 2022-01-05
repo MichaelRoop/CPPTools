@@ -6,6 +6,8 @@
 
 namespace CppIniFileNs {
 
+	/// <summary>Forward declaration of implementation object</summary>
+	class CppIniSectionImpl;
 
 	class CPPINI_EXPORT CppIniInputLine {
 	public:
@@ -18,6 +20,8 @@ namespace CppIniFileNs {
 		/// <param name="str">The object to copy</param>
 		CppIniInputLine(const Cpp_string& str);
 		
+
+		~CppIniInputLine();
 		
 		/// <summary>Initialise the object with the string</summary>
 		/// <param name="str">The string to parse and identify</param>
@@ -48,15 +52,19 @@ namespace CppIniFileNs {
 		INI_LINE_TYPE TypeOf() const;
 
 	private:
-		Cpp_string	m_firstValue;
-		Cpp_string	m_secondValue;
-		INI_LINE_TYPE m_type;
 
-		void CheckIfBlank(const Cpp_string& str);
-		void CheckIfComment(const Cpp_string& str);
-		void CheckIfSectionName(const Cpp_string& str);
-		void CheckIfNode(const Cpp_string& str);
-		void CheckIfGarbage(const Cpp_string& str);
+		CppIniSectionImpl* m_impl = NULL;
+
+
+		//Cpp_string	m_firstValue;
+		//Cpp_string	m_secondValue;
+		//INI_LINE_TYPE m_type;
+
+		//void CheckIfBlank(const Cpp_string& str);
+		//void CheckIfComment(const Cpp_string& str);
+		//void CheckIfSectionName(const Cpp_string& str);
+		//void CheckIfNode(const Cpp_string& str);
+		//void CheckIfGarbage(const Cpp_string& str);
 		
 	};
 

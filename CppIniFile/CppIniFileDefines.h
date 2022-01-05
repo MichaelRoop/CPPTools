@@ -4,9 +4,13 @@
 #include "../CPPVariousUtils/Cpp_string.h"
 #include "../CPPVariousUtils/Cpp_iostream.h"
 //#include "../CPPVariousUtils/Cpp_char.h"
+#include "../CPPVariousUtils/CppSharedPtr.h"
+
 
 using CppUtils::Cpp_string;
 using CppUtils::Cpp_ostream;
+using CppUtils::CppSharedPtr;
+
 
 #if defined (_WIN32) || defined (_WIN64)
 	#define WIN32_LEAN_AND_MEAN
