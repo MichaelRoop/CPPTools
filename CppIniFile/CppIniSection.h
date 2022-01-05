@@ -6,7 +6,7 @@
 
 namespace CppIniFileNs {
 
-	class CPPINI_API CppIniSection {
+	class CPPINI_EXPORT CppIniSection {
 	public:
 
 		/// @typedef	Definition of a vector of nodes.
@@ -144,6 +144,6 @@ namespace CppIniFileNs {
 
 
 // Force export of template containing class
-EXP_INI_TEMPLATE template class CPPINI_API std::allocator<CppIniFileNs::CppIniSection>;
-EXP_INI_TEMPLATE template class CPPINI_API std::vector<CppIniFileNs::CppIniSection>;
+CPPINI_EXTERN template class CPPINI_EXPORT std::allocator<CppIniFileNs::CppIniSection>;
+CPPINI_EXTERN template class CPPINI_EXPORT std::vector<CppIniFileNs::CppIniSection>;
 

@@ -4,12 +4,12 @@
 
 namespace CppIniFileNs {
 
-class CppIniFile {
+	class CPPINI_EXPORT CppIniFile {
 
 	public:
 
-		typedef std::vector<CppIniSection>			SectionVector;
-		typedef std::vector<CppIniSection>::iterator	SectionIterator;
+		typedef std::vector<CppIniSection> SectionVector;
+		typedef std::vector<CppIniSection>::iterator SectionIterator;
 
 
 		/// @brief	Constructor.
@@ -133,16 +133,16 @@ class CppIniFile {
 		/// @param	obj	The CppIniFile to use for its values.
 		void Init(const CppIniFile& obj);
 
-};
+	};
 
 
-/// @brief	Streaming function for node object.
-///
-/// @param	os	The output stream.
-/// @param	obj	The CppIniFile object to stream out.
-///
-/// @return	The output stream object.
-CppUtils::Cpp_ostream& operator << (CppUtils::Cpp_ostream& os, const CppIniFile& obj);
+	/// @brief	Streaming function for node object.
+	///
+	/// @param	os	The output stream.
+	/// @param	obj	The CppIniFile object to stream out.
+	///
+	/// @return	The output stream object.
+	CppUtils::Cpp_ostream& operator << (CppUtils::Cpp_ostream& os, const CppIniFile& obj);
 
 
 }

@@ -5,7 +5,7 @@
 
 namespace CppIniFileNs {
 
-	class CPPINI_API CppIniNode {
+	class CPPINI_EXPORT CppIniNode {
 	public:
 
 		/// @brief	Constructor.

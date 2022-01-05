@@ -2,7 +2,7 @@
 #include "../CPPVariousUtils/Cpp_toStream.h"
 #include <assert.h>
 
-#if defined(MR_USE_THE_ODBC_OUTPUT)
+#if defined(CPP_USE_THE_ODBC_OUTPUT)
 
 namespace CppTestHarness {
 
@@ -98,8 +98,9 @@ namespace CppTestHarness {
 			_L_("Failed to allocate ODBC statement handle")
 		);
 
-
-		ret = SQLExecDirect(stmt, const_cast<SQLTCHAR*>(str.c_str()), SQL_NTS);
+		//ret = SQLExecDirect(stmt, const_cast<SQLTCHAR*>(s.c_str()), SQL_NTS);
+		// TODO - follow this up. Need change type
+		ret = SQLExecDirect(stmt, ((SQLTCHAR*)CppUtils::WideToNarrowString(str).c_str()), SQL_NTS);
 
 		if (ret == SQL_ERROR) {
 			//assert(ret == SQL_SUCCESS);

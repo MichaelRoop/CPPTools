@@ -5,7 +5,7 @@
 namespace CppIniFileNs {
 
 
-	class CPPINI_API CppIniInputLine {
+	class CPPINI_EXPORT CppIniInputLine {
 	public:
 
 

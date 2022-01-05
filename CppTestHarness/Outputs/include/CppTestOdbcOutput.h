@@ -46,7 +46,7 @@ namespace CppTestHarness {
 	/// This class is used by derived log classes to output the log data after formating.
 	///
 	//----------------------------------------------------------------------------------------
-	class OdbcOutput : public ILogOutput {
+	class TSTHARNESS_API OdbcOutput : public ILogOutput {
 	public:
 
 		/// @brief	Constructor.
