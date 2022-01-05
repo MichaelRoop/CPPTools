@@ -14,6 +14,9 @@ namespace CppIniFileTests {
 			DoTest(Cpp_string(_L_("[Blah section]")), INI_LINE_TYPE::SECTION);
 		}
 
+		TEST_METHOD(T01_02_SectionBlanksAroundAll) {
+			DoTest(Cpp_string(_L_(" [ Blah section ] ")), INI_LINE_TYPE::SECTION);
+		}
 
 		TEST_METHOD(T02_01_BlankValid) {
 			DoTest(Cpp_string(_L_("")), INI_LINE_TYPE::BLANK);
@@ -23,8 +26,16 @@ namespace CppIniFileTests {
 			DoTest(Cpp_string(_L_("# this is a comment")), INI_LINE_TYPE::COMMENT);
 		}
 
-		TEST_METHOD(T03_02_CommentStartValid) {
+		TEST_METHOD(T03_02_CommentHashLeadingWhiteSpace) {
+			DoTest(Cpp_string(_L_("     # this is a comment")), INI_LINE_TYPE::COMMENT);
+		}
+
+		TEST_METHOD(T03_03_CommentStarValid) {
 			DoTest(Cpp_string(_L_("* this is a comment")), INI_LINE_TYPE::COMMENT);
+		}
+
+		TEST_METHOD(T03_04_CommentStarValidLeadingWhiteSpace) {
+			DoTest(Cpp_string(_L_("   * this is a comment")), INI_LINE_TYPE::COMMENT);
 		}
 
 		TEST_METHOD(T04_01_NodeValid) {
@@ -41,8 +52,6 @@ namespace CppIniFileTests {
 			Assert::AreEqual(ToString(lineType), ToString(i.TypeOf()));
 			Assert::IsTrue(i.TypeOf() == lineType);
 		}
-
-
 
 	};
 

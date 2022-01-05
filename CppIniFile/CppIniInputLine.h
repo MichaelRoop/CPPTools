@@ -54,19 +54,7 @@ namespace CppIniFileNs {
 	private:
 
 		CppIniInputLineImpl* m_impl = NULL;
-		void FreeImplObj();
-
-
-		//Cpp_string	m_firstValue;
-		//Cpp_string	m_secondValue;
-		//INI_LINE_TYPE m_type;
-
-		//void CheckIfBlank(const Cpp_string& str);
-		//void CheckIfComment(const Cpp_string& str);
-		//void CheckIfSectionName(const Cpp_string& str);
-		//void CheckIfNode(const Cpp_string& str);
-		//void CheckIfGarbage(const Cpp_string& str);
-		
+		void Cleanup();
 	};
 
 } 
