@@ -88,13 +88,15 @@ namespace CppIniFileNs {
 					// Check if there is any chars on left side of '='.
 					name = CppUtils::Trim(name);
 					if (!name.empty()) {
-						m_type = INI_LINE_TYPE::NODE;
 						m_firstValue = name;
 
-						/// @todo Probably just replace with substring of remainder of string.
+						/// substring of remainder of string.
 						CppUtils::StrTokenize(pos, str, m_secondValue, _L_('='));
 						m_secondValue = CppUtils::Trim(m_secondValue);
-						return true;
+						if (!m_secondValue.empty()) {
+							m_type = INI_LINE_TYPE::NODE;
+							return true;
+						}
 					}
 				}
 			}
