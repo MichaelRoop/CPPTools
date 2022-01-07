@@ -164,6 +164,7 @@
     <ClCompile Include="CppExceptionTests.cpp" />
     <ClCompile Include="CppIniInputLineTests.cpp" />
     <ClCompile Include="CppIniNodeTests.cpp" />
+    <ClCompile Include="CppIniSectionTests.cpp" />
     <ClCompile Include="CppSharedPtrTests.cpp" />
     <ClCompile Include="CppStateTests.cpp" />
     <ClCompile Include="CppStringTests.cpp" />

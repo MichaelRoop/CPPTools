@@ -9,7 +9,7 @@ using CppIniFileNs::INI_LINE_TYPE;
 
 namespace CppIniFileTests {
 
-	TEST_CLASS(T01_IniNodeTests) {
+	TEST_CLASS(T_02_IniNodeTests) {
 
 		TEST_METHOD(T01_01_Constructor) {
 			CppIniInputLine i(_L_("Blip=Blop"));
@@ -66,17 +66,6 @@ namespace CppIniFileTests {
 			Assert::IsTrue(node.IsDataNode(), L"Data valid");
 			Assert::AreEqual(name.c_str(), node.Name().c_str());
 			Assert::AreEqual(value.c_str(), node.Value().c_str());
-			//CppIniFileNs::INI_DATA_TYPE dataType
-		}
-
-
-		void DoTest(const Cpp_string& s, CppIniFileNs::INI_DATA_TYPE dataType) {
-			CppIniInputLine i(s);
-
-
-
-		//	Assert::AreEqual(ToString(lineType), ToString(i.TypeOf()));
-		//	Assert::IsTrue(i.TypeOf() == lineType);
 		}
 
 	};

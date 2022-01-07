@@ -8,7 +8,7 @@ using CppIniFileNs::INI_LINE_TYPE;
 
 namespace CppIniFileTests {
 
-	TEST_CLASS(T01_InputLineFirst) {
+	TEST_CLASS(T_01_InputLineTests) {
 
 		TEST_METHOD(T01_01_SectionValid) {
 			DoTest(Cpp_string(_L_("[Blah section]")), INI_LINE_TYPE::SECTION);
